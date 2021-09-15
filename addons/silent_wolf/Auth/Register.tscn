@@ -136,7 +136,7 @@ __meta__ = {
 }
 
 [node name="SignUp Label" type="Label" parent="FormContainer"]
-margin_right = 1872.0
+margin_right = 1881.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 5 )
 text = "Sign up"
@@ -144,7 +144,7 @@ align = 1
 
 [node name="MainFormContainer" type="HBoxContainer" parent="FormContainer"]
 margin_top = 140.0
-margin_right = 1872.0
+margin_right = 1881.0
 margin_bottom = 533.0
 custom_constants/separation = 30
 
@@ -190,7 +190,7 @@ custom_constants/separation = 30
 [node name="PlayerName" type="LineEdit" parent="FormContainer/MainFormContainer/FormInputFields"]
 margin_right = 700.0
 margin_bottom = 78.0
-rect_min_size = Vector2( 500, 78 )
+rect_min_size = Vector2( 700, 78 )
 custom_fonts/font = SubResource( 7 )
 max_length = 30
 
@@ -221,9 +221,9 @@ max_length = 30
 secret = true
 
 [node name="InfoLabels" type="VBoxContainer" parent="FormContainer/MainFormContainer"]
-margin_left = 1800.0
-margin_right = 1681.0
-margin_bottom = 392.0
+margin_left = 1797.0
+margin_right = 1881.0
+margin_bottom = 393.0
 rect_min_size = Vector2( 40, 0 )
 custom_constants/separation = 24
 
@@ -274,7 +274,7 @@ autowrap = true
 
 [node name="RegisterButton" parent="FormContainer" instance=ExtResource( 2 )]
 margin_top = 593.0
-margin_right = 1872.0
+margin_right = 1881.0
 margin_bottom = 703.0
 text = "Submit"
 

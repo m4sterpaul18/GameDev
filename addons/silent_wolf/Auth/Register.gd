@@ -34,7 +34,7 @@ func _on_registration_failed(error):
 	$"FormContainer/ErrorMessage".show()
 
 func _on_BackButton_pressed():
-	get_tree().change_scene(SilentWolf.auth_config.redirect_to_scene)
+	get_tree().change_scene("res://scenes/Menu.tscn")
 	
 func show_processing_label():
 	$"FormContainer/ProcessingLabel".show()
