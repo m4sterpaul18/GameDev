@@ -1,19 +1,24 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Auth/ConfirmEmail.gd" type="Script" id=1]
 [ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/window/Window-1.png" type="Texture" id=3]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 62
+outline_size = 4
+outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 48
+size = 50
+outline_size = 4
+outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 32
+size = 40
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFontData" id=4]
@@ -61,23 +66,32 @@ size = 64
 font_data = ExtResource( 4 )
 
 [node name="ConfirmEmail" type="TextureRect"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.539
+anchor_top = 0.5
+anchor_right = 0.539
+anchor_bottom = 0.5
+margin_left = -440.274
+margin_top = -296.0
+margin_right = 604.726
+margin_bottom = 420.0
+rect_min_size = Vector2( 600, 600 )
+rect_scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_horizontal_guides_": [ -352.0 ],
 "_edit_use_anchors_": false
 }
 
 [node name="FormContainer" type="VBoxContainer" parent="."]
-margin_left = 200.0
+margin_left = 224.0
 margin_top = 192.0
-margin_right = 1812.0
+margin_right = 1836.0
 margin_bottom = 875.0
-rect_scale = Vector2( 0.6, 0.6 )
+rect_scale = Vector2( 0.4, 0.4 )
 custom_constants/separation = 100
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -87,6 +101,7 @@ margin_bottom = 62.0
 custom_fonts/font = SubResource( 1 )
 text = "Confirm your email address"
 align = 1
+uppercase = true
 
 [node name="CodeContainer" type="HBoxContainer" parent="FormContainer"]
 margin_top = 162.0
@@ -95,15 +110,15 @@ margin_bottom = 237.0
 custom_constants/separation = 20
 
 [node name="Label" type="Label" parent="FormContainer/CodeContainer"]
-margin_top = 13.0
-margin_right = 192.0
-margin_bottom = 61.0
+margin_top = 12.0
+margin_right = 200.0
+margin_bottom = 62.0
 custom_fonts/font = SubResource( 2 )
 text = "Code"
 
 [node name="VerifCode" type="LineEdit" parent="FormContainer/CodeContainer"]
-margin_left = 212.0
-margin_right = 606.0
+margin_left = 220.0
+margin_right = 710.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 330, 75 )
 custom_fonts/font = SubResource( 3 )
@@ -111,9 +126,9 @@ max_length = 30
 
 [node name="ErrorMessage" type="Label" parent="FormContainer"]
 visible = false
-margin_top = 522.0
-margin_right = 648.0
-margin_bottom = 559.0
+margin_top = 337.0
+margin_right = 1612.0
+margin_bottom = 374.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 autowrap = true
@@ -121,13 +136,15 @@ autowrap = true
 [node name="ConfirmButton" parent="FormContainer" instance=ExtResource( 2 )]
 margin_top = 337.0
 margin_right = 1612.0
-margin_bottom = 447.0
+margin_bottom = 587.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_horizontal = 1
 text = "Submit"
 
 [node name="ResendConfCodeButton" parent="FormContainer" instance=ExtResource( 2 )]
-margin_top = 547.0
-margin_right = 1612.0
-margin_bottom = 657.0
+margin_top = 687.0
+margin_right = 750.0
+margin_bottom = 797.0
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )

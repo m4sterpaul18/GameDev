@@ -6,6 +6,8 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 76
+outline_size = 4
+outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -80,12 +82,13 @@ margin_bottom = 50.0
 [node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
 margin_top = 176.0
 margin_right = 1864.0
-margin_bottom = 286.0
+margin_bottom = 426.0
 
 [node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource( 4 )]
-margin_left = 365.0
-margin_right = 1499.0
-margin_bottom = 110.0
-text = "Close Leaderboard"
+margin_left = 807.0
+margin_right = 1107.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 250, 250 )
+text = "Close"
 
 [connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]

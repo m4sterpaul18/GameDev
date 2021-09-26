@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://scenes/Test.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Test.gd" type="Script" id=1]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://sounds/click.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/siren.wav" type="AudioStream" id=4]
+[ext_resource path="res://sprites/paner.jpg" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -17,6 +20,13 @@ font_data = ExtResource( 2 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 2 )
 
 [node name="Test" type="Control"]
@@ -75,10 +85,10 @@ __meta__ = {
 position = Vector2( 665, 375 )
 z_index = -1
 emitting = false
-amount = 500
+amount = 1000
 lifetime = 13.91
-speed_scale = 5.0
-explosiveness = 0.7
+speed_scale = 8.0
+explosiveness = 1.0
 lifetime_randomness = 0.5
 emission_shape = 1
 emission_sphere_radius = 0.01
@@ -118,6 +128,51 @@ custom_fonts/font = SubResource( 5 )
 align = 1
 valign = 1
 
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="jump" type="Sprite" parent="."]
+visible = false
+position = Vector2( 680, 392 )
+scale = Vector2( 1.08206, 1.26544 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="jump"]
+anchor_left = 0.471
+anchor_top = 0.22
+anchor_right = 0.471
+anchor_bottom = 0.22
+margin_left = -908.688
+margin_top = -415.514
+margin_right = -332.688
+margin_bottom = -351.514
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Got em"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jumpscare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 5.0
+pitch_scale = 1.21
+
+[node name="DOOM" type="Button" parent="."]
+margin_left = 912.0
+margin_top = 8.0
+margin_right = 1356.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 7 )
+text = "CLICK HERE FOR FREE GCASH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Click" to="." method="_on_Click_pressed"]
 [connection signal="pressed" from="Goback" to="." method="_on_Goback_pressed"]
 [connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="pressed" from="DOOM" to="." method="_on_DOOM_pressed"]

@@ -1,21 +1,77 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/Dashboard.gd" type="Script" id=2]
-[ext_resource path="res://scripts/goToLeaderboard.gd" type="Script" id=3]
+[ext_resource path="res://ui/play/Button_15.png" type="Texture" id=3]
+[ext_resource path="res://ui/window/Windows_45.png" type="Texture" id=4]
+[ext_resource path="res://ui/rank/Button_54.png" type="Texture" id=5]
+[ext_resource path="res://ui/rank/Button_56.png" type="Texture" id=6]
+[ext_resource path="res://ui/rank/Button_55.png" type="Texture" id=7]
+[ext_resource path="res://ui/play/Button_14.png" type="Texture" id=8]
+[ext_resource path="res://ui/play/Button_16.png" type="Texture" id=9]
+[ext_resource path="res://ui/logout/Button_33.png" type="Texture" id=10]
+[ext_resource path="res://ui/logout/Button_35.png" type="Texture" id=11]
+[ext_resource path="res://ui/logout/Button_34.png" type="Texture" id=12]
+[ext_resource path="res://ui/settings/Button_82.png" type="Texture" id=13]
+[ext_resource path="res://ui/settings/Button_81.png" type="Texture" id=14]
+[ext_resource path="res://ui/settings/Button_83.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
-size = 30
+size = 20
+outline_size = 3
+outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 1 )
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 176, 178 )
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 1 )
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 176, 178 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 176, 178 )
 
 [node name="Dashboard" type="Control"]
 anchor_right = 1.0
@@ -26,63 +82,100 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Greet" type="Label" parent="."]
-anchor_left = 0.498
-anchor_top = 0.324
-anchor_right = 0.498
-anchor_bottom = 0.324
-margin_left = -180.268
-margin_top = -16.832
-margin_right = 179.732
-margin_bottom = 13.168
+[node name="Welcome" type="TextureRect" parent="."]
+anchor_left = 0.539
+anchor_top = 0.177
+anchor_right = 0.539
+anchor_bottom = 0.177
+margin_left = -456.274
+margin_top = -63.936
+margin_right = 431.726
+margin_bottom = 64.064
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Welcome"]
+anchor_left = 0.532
+anchor_top = 0.406
+anchor_right = 0.532
+anchor_bottom = 0.406
+margin_left = -183.904
+margin_top = -19.968
+margin_right = 136.096
+margin_bottom = 20.032
+rect_min_size = Vector2( 300, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Greet" type="Label" parent="Welcome/CenterContainer"]
+margin_top = 10.0
+margin_right = 320.0
+margin_bottom = 30.0
 custom_fonts/font = SubResource( 1 )
-text = "Welcome User"
+text = "Welcome Username"
+align = 1
+valign = 1
+max_lines_visible = 32
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Leaderboard" type="Button" parent="."]
-anchor_left = 0.628
-anchor_top = 0.52
-anchor_right = 0.628
-anchor_bottom = 0.52
-margin_left = -135.848
-margin_top = -40.36
-margin_right = 137.152
-margin_bottom = 38.64
-custom_fonts/font = SubResource( 2 )
-text = "Leaderboard"
-script = ExtResource( 3 )
+[node name="Menu Items" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -307.0
+margin_top = 40.0
+margin_right = 353.0
+margin_bottom = 190.0
+custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play" type="Button" parent="."]
-anchor_left = 0.344
-anchor_top = 0.52
-anchor_right = 0.344
-anchor_bottom = 0.52
-margin_left = -136.904
-margin_top = -38.36
-margin_right = 147.096
-margin_bottom = 38.64
+[node name="Play" type="Button" parent="Menu Items"]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 custom_fonts/font = SubResource( 3 )
-text = "Adventure"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Reset" type="Button" parent="."]
-margin_left = 1165.0
-margin_top = 731.0
-margin_right = 1353.0
-margin_bottom = 760.0
-custom_fonts/font = SubResource( 4 )
-text = "Reset Ranks"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Ranking" type="Button" parent="Menu Items"]
+margin_left = 170.0
+margin_right = 320.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 
-[connection signal="pressed" from="Leaderboard" to="Leaderboard" method="_on_Leaderboard_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
+[node name="Settings" type="Button" parent="Menu Items"]
+margin_left = 340.0
+margin_right = 490.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 0 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+
+[node name="Logout" type="Button" parent="Menu Items"]
+margin_left = 510.0
+margin_right = 660.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+
+[connection signal="pressed" from="Menu Items/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Menu Items/Ranking" to="." method="_on_Ranking_pressed"]

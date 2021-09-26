@@ -8,9 +8,9 @@ func _ready():
 	SilentWolf.Auth.connect("sw_login_failed", self, "_on_login_failed")
 
 func _on_LoginButton_pressed():
-	var username = $"FormContainer/UsernameContainer/Username".text
-	var password = $"FormContainer/PasswordContainer/Password".text
-	var remember_me = $"FormContainer/RememberMeCheckBox".is_pressed()
+	var username = $"Background/FormContainer/UsernameContainer/Username".text
+	var password = $"Background/FormContainer/PasswordContainer/Password".text
+	var remember_me = $"Background/FormContainer/RememberMeCheckBox".is_pressed()
 	SWLogger.debug("Login form submitted, remember_me: " + str(remember_me))
 	SilentWolf.Auth.login_player(username, password, remember_me)
 	show_processing_label()
@@ -23,18 +23,18 @@ func _on_login_succeeded():
 func _on_login_failed(error):
 	hide_processing_label()
 	SWLogger.info("log in failed: " + str(error))
-	$"FormContainer/ErrorMessage".text = error
-	$"FormContainer/ErrorMessage".show()
+	$"Background/FormContainer/ErrorMessage".text = error
+	$"Background/FormContainer/ErrorMessage".show()
 
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://scenes/Menu.tscn")
 	
 func show_processing_label():
-	$"FormContainer/ProcessingLabel".show()
-	$"FormContainer/ProcessingLabel".show()
+	$"Background/FormContainer/ProcessingLabel".show()
+	$"Background/FormContainer/ProcessingLabel".show()
 	
 func hide_processing_label():
-	$"FormContainer/ProcessingLabel".hide()
+	$"Background/FormContainer/ProcessingLabel".hide()
 
 
 func _on_LinkButton_pressed():

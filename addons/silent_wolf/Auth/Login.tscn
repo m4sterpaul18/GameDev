@@ -1,85 +1,99 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Auth/Login.gd" type="Script" id=1]
 [ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/back-normal.png" type="Texture" id=4]
 [ext_resource path="res://addons/silent_wolf/assets/gfx/checkbox_unchecked.png" type="Texture" id=5]
 [ext_resource path="res://addons/silent_wolf/assets/gfx/checkbox_checked.png" type="Texture" id=6]
+[ext_resource path="res://ui/back-hover.png" type="Texture" id=7]
+[ext_resource path="res://ui/back-pressed.png" type="Texture" id=8]
+[ext_resource path="res://ui/window/Window-1.png" type="Texture" id=9]
+[ext_resource path="res://ui/Button-hover.png" type="Texture" id=10]
+[ext_resource path="res://ui/Button-normal.png" type="Texture" id=11]
+[ext_resource path="res://ui/Button-pressed.png" type="Texture" id=12]
 
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 23.0
-content_margin_right = 23.0
-content_margin_top = 23.0
-content_margin_bottom = 23.0
-bg_color = Color( 0.831373, 0.415686, 0.415686, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxFlat" id=2]
-content_margin_left = 23.0
-content_margin_right = 23.0
-content_margin_top = 23.0
-content_margin_bottom = 23.0
-bg_color = Color( 0.831373, 0.415686, 0.415686, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-content_margin_left = 23.0
-content_margin_right = 23.0
-content_margin_top = 23.0
-content_margin_bottom = 23.0
-bg_color = Color( 0.482353, 0.458824, 0.458824, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 176, 178 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 32
+size = 20
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 40
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
+outline_color = Color( 0.0810547, 0.0312662, 0.0312662, 1 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 42
-font_data = ExtResource( 3 )
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 32
+size = 66
+outline_size = 3
+outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 32
+size = 45
+outline_size = 3
+outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 32
-outline_color = Color( 0.211765, 0.25098, 0.937255, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=10]
-content_margin_left = 5.0
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 32
+outline_color = Color( 0.211765, 0.25098, 0.937255, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFontData" id=12]
-font_path = "res://addons/silent_wolf/assets/fonts/Comfortaa-Bold.ttf"
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 5.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [sub_resource type="DynamicFont" id=13]
+size = 36
+outline_size = 3
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://addons/silent_wolf/assets/fonts/Comfortaa-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=15]
 size = 32
-font_data = SubResource( 12 )
+font_data = SubResource( 14 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 362, 178 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 362, 178 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 363, 178 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Login" type="TextureRect"]
 margin_right = 40.0
@@ -90,127 +104,140 @@ __meta__ = {
 }
 
 [node name="BackButton" parent="." instance=ExtResource( 2 )]
-margin_left = 51.0
-margin_top = 53.0
-margin_right = 289.0
-margin_bottom = 131.0
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 120.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
-text = "← Back"
+text = ""
 
-[node name="FormContainer" type="VBoxContainer" parent="."]
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 696, 368 )
+scale = Vector2( 0.812151, 0.812151 )
+z_index = -1
+texture = ExtResource( 9 )
+
+[node name="FormContainer" type="VBoxContainer" parent="Background"]
 anchor_left = 17.425
 anchor_top = 11.91
 anchor_right = 17.425
 anchor_bottom = 11.91
-margin_left = -340.0
-margin_top = -331.4
-margin_right = 832.0
-margin_bottom = 618.6
-rect_scale = Vector2( 0.6, 0.6 )
+margin_left = -18494.8
+margin_top = -8763.97
+margin_right = -17276.8
+margin_bottom = -7813.97
+rect_scale = Vector2( 0.5, 0.5 )
+theme = SubResource( 6 )
 custom_constants/separation = 80
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="FormContainer"]
-margin_right = 1218.0
-margin_bottom = 40.0
-custom_fonts/font = SubResource( 5 )
+[node name="Label" type="Label" parent="Background/FormContainer"]
+margin_right = 1245.0
+margin_bottom = 66.0
+custom_fonts/font = SubResource( 7 )
 text = "Log in"
 align = 1
+uppercase = true
 
-[node name="UsernameContainer" type="HBoxContainer" parent="FormContainer"]
-margin_top = 120.0
-margin_right = 1218.0
-margin_bottom = 195.0
+[node name="UsernameContainer" type="HBoxContainer" parent="Background/FormContainer"]
+margin_top = 146.0
+margin_right = 1245.0
+margin_bottom = 221.0
 custom_constants/separation = 20
 
-[node name="Label" type="Label" parent="FormContainer/UsernameContainer"]
-margin_top = 16.0
-margin_right = 378.0
-margin_bottom = 58.0
-custom_fonts/font = SubResource( 6 )
+[node name="Label" type="Label" parent="Background/FormContainer/UsernameContainer"]
+margin_top = 15.0
+margin_right = 405.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 8 )
 text = "Username:"
 
-[node name="Username" type="LineEdit" parent="FormContainer/UsernameContainer"]
-margin_left = 398.0
-margin_right = 1198.0
+[node name="Username" type="LineEdit" parent="Background/FormContainer/UsernameContainer"]
+margin_left = 425.0
+margin_right = 1225.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 800, 75 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 max_length = 30
 
-[node name="PasswordContainer" type="HBoxContainer" parent="FormContainer"]
-margin_top = 275.0
-margin_right = 1218.0
-margin_bottom = 350.0
+[node name="PasswordContainer" type="HBoxContainer" parent="Background/FormContainer"]
+margin_top = 301.0
+margin_right = 1245.0
+margin_bottom = 376.0
 custom_constants/separation = 40
 
-[node name="Label" type="Label" parent="FormContainer/PasswordContainer"]
-margin_top = 16.0
-margin_right = 378.0
-margin_bottom = 58.0
-custom_fonts/font = SubResource( 6 )
+[node name="Label" type="Label" parent="Background/FormContainer/PasswordContainer"]
+margin_top = 15.0
+margin_right = 405.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 8 )
 text = "Password:"
 
-[node name="Password" type="LineEdit" parent="FormContainer/PasswordContainer"]
-margin_left = 418.0
-margin_right = 1218.0
+[node name="Password" type="LineEdit" parent="Background/FormContainer/PasswordContainer"]
+margin_left = 445.0
+margin_right = 1245.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 800, 75 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
 max_length = 30
 secret = true
 
-[node name="LinkButton" type="LinkButton" parent="FormContainer"]
-margin_top = 430.0
-margin_right = 1218.0
-margin_bottom = 462.0
-custom_fonts/font = SubResource( 9 )
+[node name="LinkButton" type="LinkButton" parent="Background/FormContainer"]
+margin_top = 456.0
+margin_right = 1245.0
+margin_bottom = 488.0
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.321569, 0.360784, 0.92549, 1 )
 text = "Forgot Password?"
 
-[node name="RememberMeCheckBox" type="CheckBox" parent="FormContainer"]
-margin_top = 542.0
-margin_right = 1218.0
-margin_bottom = 592.0
+[node name="RememberMeCheckBox" type="CheckBox" parent="Background/FormContainer"]
+margin_top = 568.0
+margin_right = 1245.0
+margin_bottom = 618.0
 rect_min_size = Vector2( 50, 50 )
 focus_mode = 0
 custom_icons/checked = ExtResource( 6 )
 custom_icons/unchecked = ExtResource( 5 )
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_constants/hseparation = 15
 text = "Stay signed in for 30 days"
 expand_icon = true
 
-[node name="ErrorMessage" type="Label" parent="FormContainer"]
+[node name="ErrorMessage" type="Label" parent="Background/FormContainer"]
 visible = false
 margin_top = 522.0
 margin_right = 648.0
 margin_bottom = 559.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 autowrap = true
 
-[node name="LoginButton" parent="FormContainer" instance=ExtResource( 2 )]
-margin_top = 672.0
-margin_right = 1218.0
-margin_bottom = 782.0
+[node name="LoginButton" parent="Background/FormContainer" instance=ExtResource( 2 )]
+margin_top = 698.0
+margin_right = 1245.0
+margin_bottom = 948.0
+rect_min_size = Vector2( 0, 250 )
+size_flags_horizontal = 1
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
 text = "Submit"
 
-[node name="ProcessingLabel" type="Label" parent="FormContainer"]
+[node name="ProcessingLabel" type="Label" parent="Background/FormContainer"]
 visible = false
-margin_top = 823.0
-margin_right = 1316.0
-margin_bottom = 902.0
-custom_fonts/font = SubResource( 5 )
+margin_top = 981.0
+margin_right = 1245.0
+margin_bottom = 1068.0
+custom_fonts/font = SubResource( 19 )
 text = "Processing..."
 align = 1
 
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="pressed" from="FormContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
-[connection signal="pressed" from="FormContainer/LoginButton" to="." method="_on_LoginButton_pressed"]
+[connection signal="pressed" from="Background/FormContainer/LinkButton" to="." method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="Background/FormContainer/LoginButton" to="." method="_on_LoginButton_pressed"]

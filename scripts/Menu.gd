@@ -5,4 +5,5 @@ onready var version = $Version
 func _ready():
 	version.text = "Version " + str(SilentWolf.config.game_version)
 
-
+func _on_Credits_pressed() -> void:
+	get_tree().change_scene("res://scenes/Credits.tscn")
