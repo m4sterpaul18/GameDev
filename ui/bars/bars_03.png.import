@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Windows_08.png-066289ce376226a7979fce8089805f2f.stex"
+path="res://.import/bars_03.png-a0eec683973153951ea57e8025829d8a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/window/Windows_08.png"
-dest_files=[ "res://.import/Windows_08.png-066289ce376226a7979fce8089805f2f.stex" ]
+source_file="res://ui/bars/bars_03.png"
+dest_files=[ "res://.import/bars_03.png-a0eec683973153951ea57e8025829d8a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

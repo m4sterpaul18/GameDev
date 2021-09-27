@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Windows_08.png-066289ce376226a7979fce8089805f2f.stex"
+path="res://.import/arrow.png-e851926e82626bc78deb80cc05e0c06d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/window/Windows_08.png"
-dest_files=[ "res://.import/Windows_08.png-066289ce376226a7979fce8089805f2f.stex" ]
+source_file="res://sprites/flowchart/arrow.png"
+dest_files=[ "res://.import/arrow.png-e851926e82626bc78deb80cc05e0c06d.stex" ]
 
 [params]
 
