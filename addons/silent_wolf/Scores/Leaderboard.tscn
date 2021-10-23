@@ -86,9 +86,11 @@ margin_bottom = 426.0
 
 [node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource( 4 )]
 margin_left = 807.0
-margin_right = 1107.0
+margin_right = 1057.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 250, 250 )
 text = "Close"
 
+[connection signal="tree_entered" from="." to="." method="_on_Leaderboard_tree_entered"]
+[connection signal="tree_exited" from="." to="." method="_on_Leaderboard_tree_exited"]
 [connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
