@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ui/retry/Button_22.png" type="Texture" id=1]
+[ext_resource path="res://ui/retry/Button_23.png" type="Texture" id=2]
+[ext_resource path="res://ui/retry/Button_21.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 177, 179 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 177, 179 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 176, 179 )
+
+[node name="retry" type="Button"]
+margin_right = 100.0
+margin_bottom = 101.0
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )

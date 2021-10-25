@@ -1,155 +1,97 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://games/game-1/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://games/game-1/scripts/World.gd" type="Script" id=2]
-[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://ui/window/Window-1.png" type="Texture" id=4]
+[ext_resource path="res://games/game-1/scenes/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://games/game-1/scenes/gameover.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=3]
-size = 32
-outline_size = 1
-outline_color = Color( 0.521569, 0, 1, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 64
-outline_size = 1
-outline_color = Color( 0.521569, 0, 1, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 3 )
-
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 504 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Control" type="Control" parent="."]
-margin_right = 1366.0
-margin_bottom = 768.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.0
-margin_right = -1.0
+rect_min_size = Vector2( 1366, 768 )
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="game_over" type="TextureRect" parent="Control/ColorRect"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 3 )]
+
+[node name="gameover_screen" parent="CanvasLayer/HUD" instance=ExtResource( 4 )]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -414.0
-margin_top = -292.0
-margin_right = 631.0
-margin_bottom = 424.0
-rect_scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
-stretch_mode = 3
+margin_left = -362.0
+margin_top = -266.0
+margin_right = 683.0
+margin_bottom = 450.0
+
+[node name="walls" type="Node2D" parent="."]
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_lock_": true
 }
 
-[node name="final_score" type="Label" parent="Control/ColorRect/game_over"]
-anchor_left = 0.484
-anchor_top = 0.162
-anchor_right = 0.484
-anchor_bottom = 0.162
-margin_left = -174.78
-margin_top = -15.992
-margin_right = 177.22
-margin_bottom = 16.008
-custom_fonts/font = SubResource( 3 )
-text = "Final Score"
+[node name="StaticBody2D" type="StaticBody2D" parent="walls"]
+position = Vector2( -8, 230 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
-[node name="Button" type="Button" parent="Control/ColorRect/game_over/final_score"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.5
-margin_top = 120.0
-margin_right = 28.5
-margin_bottom = 140.0
-text = "Submit"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2( -2, 148 )
+shape = SubResource( 2 )
 
-[node name="score" type="Label" parent="Control/ColorRect/game_over/final_score"]
-anchor_left = 0.497
-anchor_top = 2.562
-anchor_right = 0.497
-anchor_bottom = 2.562
-margin_left = -30.944
-margin_top = -29.984
-margin_right = 33.056
-margin_bottom = 101.016
-custom_fonts/font = SubResource( 4 )
-text = "0
-"
+[node name="StaticBody2D2" type="StaticBody2D" parent="walls"]
+position = Vector2( 1377, 230 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ColorRect/game_over"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -112.0
-margin_top = 62.0
-margin_right = 112.0
-margin_bottom = 142.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+position = Vector2( -2, 148 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="walls"]
+position = Vector2( 909, -8 )
+rotation = 1.5708
+scale = Vector2( 1, 1.5 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
-[node name="Button" type="Button" parent="Control/ColorRect/game_over/HBoxContainer"]
-margin_right = 110.0
-margin_bottom = 80.0
-size_flags_horizontal = 3
-text = "Restart"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D3"]
+position = Vector2( -2, 148 )
+shape = SubResource( 2 )
 
-[node name="Button2" type="Button" parent="Control/ColorRect/game_over/HBoxContainer"]
-margin_left = 114.0
-margin_right = 224.0
-margin_bottom = 80.0
-size_flags_horizontal = 3
-text = "Home"
-
-[node name="score_label" type="Label" parent="Control"]
-anchor_left = 0.5
-anchor_top = 0.007
-anchor_right = 0.5
-anchor_bottom = 0.007
-margin_left = -40.0
-margin_top = 23.624
-margin_right = 40.0
-margin_bottom = 39.624
-custom_fonts/font = SubResource( 2 )
-text = "Score"
-align = 1
-valign = 1
+[node name="StaticBody2D4" type="StaticBody2D" parent="walls"]
+position = Vector2( 909, 780 )
+rotation = 1.5708
+scale = Vector2( 1, 1.5 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 684, 721 )
-shoot_cooldown = 0.3
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D4"]
+position = Vector2( -2, 148 )
+shape = SubResource( 2 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( 672, -160 )
+z_index = -2
 amount = 50
 lifetime = 3.0
 randomness = 0.13
@@ -164,31 +106,17 @@ angle = 355.3
 angle_random = 0.43
 scale_amount = 6.0
 scale_amount_random = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 684, 721 )
+z_index = 100
+shoot_cooldown = 0.3
 
 [node name="spawn_timer" type="Timer" parent="."]
 wait_time = 1.5
 autostart = true
-
-[node name="walls" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="walls"]
-position = Vector2( -8, 230 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D"]
-position = Vector2( -2, 148 )
-shape = SubResource( 1 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="walls"]
-position = Vector2( 1377, 230 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D2"]
-position = Vector2( -2, 148 )
-shape = SubResource( 1 )
 
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]

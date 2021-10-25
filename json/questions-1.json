@@ -1,0 +1,24 @@
+{
+    "question-1":
+    {
+       "question":"What is my age?",
+       "answer":"16",
+       "choices":[
+          16,
+          17,
+          18,
+          19
+       ]
+    },
+    "question-2":
+    {
+        "question":"What is my name?",
+        "answer":"chad",
+        "choices":[
+           "chad",
+           "floyd",
+           "pacquiao",
+           "canelo"
+        ]
+     }
+ }

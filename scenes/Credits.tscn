@@ -17,12 +17,17 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 1 )
 
 [node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -8.0
-margin_bottom = -8.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -683.0
+margin_top = -384.0
+margin_right = 683.0
+margin_bottom = 384.0
 script = ExtResource( 6 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
