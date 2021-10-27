@@ -1,6 +1,8 @@
 extends Control
 
-signal correct_answer
+signal check_answer
+#signal correct_answer
+#signal wrong_answer
 
 export (String) var path = "res://json/questions-1.json"
 export (int) var number_of_questions = 2
@@ -20,7 +22,7 @@ func open_file(path):
 	return content
 
 func _ready() -> void:
-	connect("correct_answer",self,"_check_answer")
+	connect("check_answer",self,"_check_answer")
 	
 	randomize()
 	question = JSON.parse(open_file(path)).result
@@ -33,7 +35,11 @@ func _ready() -> void:
 	question_label.text = str(question["question-" + question_number]["question"])
 	
 	#set choices
-	print (question["question-" + question_number]["choices"])
+	var choices = question["question-" + question_number]["choices"]
+	
+	#shuffle answers
+	choices.shuffle()
+	
 	for i in range(4):
 		get_node("choices").get_child(i).text = str(question["question-" + question_number]["choices"][i])
 	
@@ -47,24 +53,29 @@ func _check_answer(answer:String):
 	
 	if answer == correct_answer:
 		print("correct!")
+		Global1.emit_signal("resume")
+		Global1.emit_signal("answer_is_correct")
 	else:
 		print("wrong!")
+		Global1.emit_signal("resume")
+		Global1.emit_signal("answer_is_wrong")
+		
 func _on_A_pressed() -> void:
 	final_answer = $'choices/A'.text
 	print ("final answer:" + str(final_answer))
-	emit_signal("correct_answer",final_answer)
+	emit_signal("check_answer",final_answer)
 
 func _on_B_pressed() -> void:
 	final_answer = $'choices/B'.text
 	print ("final answer:" + str(final_answer))
-	emit_signal("correct_answer",final_answer)
+	emit_signal("check_answer",final_answer)
 
 func _on_C_pressed() -> void:
 	final_answer = $'choices/C'.text
 	print ("final answer:" + str(final_answer))
-	emit_signal("correct_answer",final_answer)
+	emit_signal("check_answer",final_answer)
 
 func _on_D_pressed() -> void:
 	final_answer = $'choices/D'.text
 	print ("final answer:" + str(final_answer))
-	emit_signal("correct_answer",final_answer)
+	emit_signal("check_answer",final_answer)

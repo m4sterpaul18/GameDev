@@ -20,5 +20,16 @@
            "pacquiao",
            "canelo"
         ]
+     },
+    "question-3":
+    {
+        "question":"Who is the most handsome?",
+        "answer":"chad",
+        "choices":[
+           "chad",
+           "nixon",
+           "val",
+           "all of them"
+        ]
      }
  }

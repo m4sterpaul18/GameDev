@@ -10,7 +10,7 @@ func _ready():
 
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://scenes/Test.tscn")
+	get_tree().change_scene("res://scenes/Gameselect.tscn")
 
 
 func _on_Ranking_pressed() -> void:

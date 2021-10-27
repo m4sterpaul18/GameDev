@@ -5,4 +5,11 @@
 [node name="lives" type="TextureRect"]
 margin_right = 32.0
 margin_bottom = 32.0
+rect_scale = Vector2( 3, 3 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
 texture = ExtResource( 1 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

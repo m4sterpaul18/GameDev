@@ -15,10 +15,8 @@ __meta__ = {
 }
 
 [node name="timerBar" type="TextureProgress" parent="."]
-margin_right = 336.0
+margin_right = 335.0
 margin_bottom = 53.0
-max_value = 10.0
-value = 10.0
 rounded = true
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 2 )

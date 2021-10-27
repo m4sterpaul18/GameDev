@@ -7,6 +7,7 @@ export (int) var points = 50
 
 onready var explosion = preload("res://games/game-1/scenes/explosionparticles.tscn")
 
+
 func _process(delta: float) -> void:
 	position.y += speed * delta 
 
@@ -18,6 +19,7 @@ func _on_VisibilityNotifier2D_screen_exited() -> void:
 func damage(amount:int):
 	hp -= amount
 	if hp <= 0:
+		Global1.emit_signal("explode_sound")
 		var explode = explosion.instance()
 		explode.position = position
 		get_parent().add_child(explode)

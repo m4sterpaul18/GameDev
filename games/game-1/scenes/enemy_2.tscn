@@ -5,8 +5,8 @@
 
 [node name="enemy_2" instance=ExtResource( 2 )]
 hp = 1
-speed = 500.0
-points = 100
+speed = 550.0
+points = 10
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )

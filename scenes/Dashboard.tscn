@@ -137,23 +137,24 @@ anchor_left = 0.532
 anchor_top = 0.406
 anchor_right = 0.532
 anchor_bottom = 0.406
-margin_left = -183.904
+margin_left = -224.416
 margin_top = -19.968
-margin_right = 136.096
-margin_bottom = 20.032
+margin_right = 175.584
+margin_bottom = 30.032
 rect_min_size = Vector2( 300, 40 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Greet" type="Label" parent="Welcome/CenterContainer"]
-margin_top = 10.0
-margin_right = 320.0
-margin_bottom = 30.0
+margin_right = 400.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 400, 50 )
 custom_fonts/font = SubResource( 1 )
 text = "Welcome Username"
 align = 1
 valign = 1
+clip_text = true
 max_lines_visible = 32
 __meta__ = {
 "_edit_use_anchors_": false
@@ -165,9 +166,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -330.0
-margin_top = 120.0
+margin_top = 64.0
 margin_right = 330.0
-margin_bottom = 270.0
+margin_bottom = 214.0
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false

@@ -6,7 +6,7 @@ const SWLogger = preload("../utils/SWLogger.gd")
 
 var list_index = 0
 # Replace the leaderboard name if you're not using the default leaderboard
-var ld_name = "main"
+export (String) var ld_name = "plane"
 
 func _ready():
 #	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
@@ -26,6 +26,29 @@ func _ready():
 #		hide_message()
 #		render_board(SilentWolf.Scores.scores, local_scores)
 	pass
+	
+func _on_Leaderboard_tree_entered() -> void:
+	print("ld name:" + ld_name)
+	print('leaderboard enter')
+	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
+	print("SilentWolf.Scores.ldboard_config: " + str(SilentWolf.Scores.ldboard_config))
+	#dont uncomment this var scores = SilentWolf.Scores.scores
+	var scores = []
+	if ld_name in SilentWolf.Scores.leaderboards:
+		scores = SilentWolf.Scores.leaderboards[ld_name]
+	var local_scores = SilentWolf.Scores.local_scores
+	
+	if len(scores) > 0: 
+		render_board(scores, local_scores)
+	else:
+		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
+		add_loading_scores_message()
+		yield(SilentWolf.Scores.get_high_scores(10,ld_name), "sw_scores_received")
+		hide_message()
+		render_board(SilentWolf.Scores.scores, local_scores)
+
+func _on_Leaderboard_tree_exited() -> void:
+	queue_free()
 
 
 func render_board(scores, local_scores):
@@ -115,24 +138,3 @@ func _on_CloseButton_pressed():
 	get_tree().change_scene(scene_name)
 
 
-func _on_Leaderboard_tree_entered() -> void:
-	print('leaderboard enter')
-	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
-	print("SilentWolf.Scores.ldboard_config: " + str(SilentWolf.Scores.ldboard_config))
-	#dont uncomment this var scores = SilentWolf.Scores.scores
-	var scores = []
-	if ld_name in SilentWolf.Scores.leaderboards:
-		scores = SilentWolf.Scores.leaderboards[ld_name]
-	var local_scores = SilentWolf.Scores.local_scores
-	
-	if len(scores) > 0: 
-		render_board(scores, local_scores)
-	else:
-		# use a signal to notify when the high scores have been returned, and show a "loading" animation until it's the case...
-		add_loading_scores_message()
-		yield(SilentWolf.Scores.get_high_scores(), "sw_scores_received")
-		hide_message()
-		render_board(SilentWolf.Scores.scores, local_scores)
-
-func _on_Leaderboard_tree_exited() -> void:
-	queue_free()
