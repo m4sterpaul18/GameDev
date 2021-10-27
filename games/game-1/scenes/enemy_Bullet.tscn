@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://games/game-1/scenes/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://games/game-1/sprites/Tiles/tile_0012.png" type="Texture" id=2]
+[ext_resource path="res://games/game-1/scripts/enemy_Bullet.gd" type="Script" id=3]
+
+[node name="enemy_bullet" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+bullet_speed = 500.0
+
+[node name="Sprite" parent="." index="0"]
+rotation = 3.14159
+texture = ExtResource( 2 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+position = Vector2( 0, -0.500001 )
+scale = Vector2( 1, 1.75 )

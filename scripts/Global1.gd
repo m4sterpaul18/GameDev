@@ -12,3 +12,6 @@ signal answer_is_wrong
 signal resume
 
 var score:int = 0
+
+#signal by enemy to damage player
+signal damage_player_by_enemy

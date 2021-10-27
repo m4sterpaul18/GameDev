@@ -1,12 +1,15 @@
 extends Area2D
+class_name bullet
 
 export (int) var damage = 1
 export (float) var bullet_speed = 200
 
 
-func _physics_process(delta: float) -> void:
-	position.y -= bullet_speed * delta
 
+func _physics_process(delta: float) -> void:
+	
+	position.y -= bullet_speed * delta
+	
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()

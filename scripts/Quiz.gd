@@ -5,7 +5,7 @@ signal check_answer
 #signal wrong_answer
 
 export (String) var path = "res://json/questions-1.json"
-export (int) var number_of_questions = 2
+export (int) var number_of_questions = 5
 
 onready var question_label = $'window/question'
 onready var choices = $'choices'
@@ -20,7 +20,9 @@ func open_file(path):
 	var content = file.get_as_text()
 	file.close()
 	return content
-
+func _process(delta: float) -> void:
+	$timerBar.value = $Timer.time_left
+	
 func _ready() -> void:
 	connect("check_answer",self,"_check_answer")
 	
@@ -79,3 +81,9 @@ func _on_D_pressed() -> void:
 	final_answer = $'choices/D'.text
 	print ("final answer:" + str(final_answer))
 	emit_signal("check_answer",final_answer)
+
+
+func _on_Timer_timeout() -> void:
+	print("time ran out!")
+	Global1.emit_signal("resume")
+	Global1.emit_signal("answer_is_wrong")

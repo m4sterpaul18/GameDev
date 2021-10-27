@@ -4,7 +4,7 @@ extends Control
 
 
 func _on_Plane_pressed() -> void:
-	get_tree().change_scene("res://games/game-1/scenes/World.tscn")
+	get_tree().change_scene("res://games/game-1/scenes/Instructions.tscn")
 
 
 func _on_Back_pressed() -> void:

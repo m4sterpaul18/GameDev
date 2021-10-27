@@ -1,35 +1,52 @@
 {
-    "question-1":
-    {
-       "question":"What is my age?",
-       "answer":"16",
-       "choices":[
-          16,
-          17,
-          18,
-          19
-       ]
-    },
-    "question-2":
-    {
-        "question":"What is my name?",
-        "answer":"chad",
-        "choices":[
-           "chad",
-           "floyd",
-           "pacquiao",
-           "canelo"
-        ]
-     },
-    "question-3":
-    {
-        "question":"Who is the most handsome?",
-        "answer":"chad",
-        "choices":[
-           "chad",
-           "nixon",
-           "val",
-           "all of them"
-        ]
-     }
- }
+   "question-1":{
+      "question":"What is called for an artificial language that can be used to control the behaviour of a machine, particularly a computer",
+      "answer":"programming language",
+      "choices":[
+         "c language",
+         "java language",
+         "programming language",
+         "artificial intelligence"
+      ]
+   },
+   "question-2":{
+      "question":"What is called for machine that taking inputs and output?",
+      "answer":"computer",
+      "choices":[
+         "type writter",
+         "computer",
+         "programming",
+         "microcomputer"
+      ]
+   },
+   "question-3":{
+      "question":"How computer think?",
+      "answer":"binary",
+      "choices":[
+         "inputs",
+         "numbers",
+         "words",
+         "binary"
+      ]
+   },
+   "question-4":{
+      "question":"What kind of language is difficult for human to read?",
+      "answer":"low-level programming",
+      "choices":[
+         "high-level programming",
+         "low-level programming",
+         "artificial intelligence",
+         "none of the above"
+      ]
+   },
+   "question-5":{
+      "question":"What kind of words used in High-level language?",
+      "answer":"objects",
+      "choices":[
+         "english",
+         "variables",
+         "objects",
+         "string"
+      ]
+   }
+}

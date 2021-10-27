@@ -6,11 +6,13 @@ export (float) var speed = 350.0
 export (int) var points = 50
 
 onready var explosion = preload("res://games/game-1/scenes/explosionparticles.tscn")
+onready var enemy_bullet = preload("res://games/game-1/scenes/enemy_Bullet.tscn")
+onready var firing_positions = $"firing_positions"
 
 
+	
 func _process(delta: float) -> void:
 	position.y += speed * delta 
-
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
 	queue_free()
@@ -25,3 +27,10 @@ func damage(amount:int):
 		get_parent().add_child(explode)
 		Global1.score += points
 		queue_free()
+
+func fire():
+	for child in firing_positions.get_children():
+		var bullet = enemy_bullet.instance()
+		bullet.global_position = child.global_position
+		get_tree().current_scene.add_child(bullet)
+		

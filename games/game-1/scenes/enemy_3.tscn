@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://games/game-1/scenes/enemy_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://games/game-1/sprites/Ships/ship_0003.png" type="Texture" id=2]
+[ext_resource path="res://games/game-1/scripts/enemy_3.gd" type="Script" id=3]
+
+[node name="enemy_3" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+hp = 2
+speed = 100.0
+points = 30
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="firing_cooldown" type="Timer" parent="." index="4"]
+wait_time = 2.0
+one_shot = true
