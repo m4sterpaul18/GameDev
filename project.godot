@@ -34,7 +34,8 @@ _global_script_class_icons={
 
 config/name="GameDev"
 run/main_scene="res://scenes/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://games/game-1/sprites/Ships/ship_0001.png"
+config/windows_native_icon="res://game_icon.ico"
 
 [autoload]
 

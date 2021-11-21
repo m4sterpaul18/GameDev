@@ -21,7 +21,9 @@ func _on_VisibilityNotifier2D_screen_exited() -> void:
 func damage(amount:int):
 	hp -= amount
 	if hp <= 0:
+		Global1.emit_signal("screen_shake")
 		Global1.emit_signal("explode_sound")
+		
 		var explode = explosion.instance()
 		explode.position = position
 		get_parent().add_child(explode)
@@ -34,3 +36,12 @@ func fire():
 		bullet.global_position = child.global_position
 		get_tree().current_scene.add_child(bullet)
 		
+
+
+func _on_enemy_1_area_entered(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		Global1.emit_signal("explode_sound")
+		var explode = explosion.instance()
+		explode.position = position
+		get_parent().add_child(explode)
+		queue_free()

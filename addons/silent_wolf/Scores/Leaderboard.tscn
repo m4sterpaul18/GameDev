@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Scores/Leaderboard.gd" type="Script" id=1]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
@@ -15,6 +15,12 @@ size = 32
 font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 2 )
 
 [node name="Leaderboard" type="Node2D"]
 script = ExtResource( 1 )
@@ -90,6 +96,23 @@ margin_right = 1057.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 250, 250 )
 text = "Close"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 272.0
+margin_top = 416.0
+margin_right = 1136.0
+margin_bottom = 710.0
+custom_fonts/font = SubResource( 4 )
+text = "Oh no Leaderboard is not working well right now 
+:( 
+
+please look at the leaderboard in the website instead"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="tree_entered" from="." to="." method="_on_Leaderboard_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_Leaderboard_tree_exited"]

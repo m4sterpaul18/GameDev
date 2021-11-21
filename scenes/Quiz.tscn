@@ -9,12 +9,13 @@
 [ext_resource path="res://scenes/Timer.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 24
+size = 17
 outline_size = 2
 outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 10
 outline_size = 2
 outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 2 )
@@ -68,14 +69,14 @@ __meta__ = {
 }
 
 [node name="choices" type="GridContainer" parent="."]
-anchor_left = 0.501
-anchor_top = 0.594
-anchor_right = 0.501
-anchor_bottom = 0.594
-margin_left = -396.366
-margin_top = -168.192
-margin_right = 395.634
-margin_bottom = 167.808
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -396.0
+margin_top = -104.0
+margin_right = 396.0
+margin_bottom = 232.0
 columns = 2
 __meta__ = {
 "_edit_use_anchors_": false

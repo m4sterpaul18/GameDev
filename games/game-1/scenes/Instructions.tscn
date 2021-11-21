@@ -36,7 +36,9 @@ margin_top = 37.0
 margin_right = 120.0
 margin_bottom = 57.0
 custom_fonts/font = SubResource( 1 )
-text = "Instructions"
+text = "INSTRUCTIONS"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,14 +48,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -301.0
-margin_top = 16.0
-margin_right = 301.0
-margin_bottom = 245.0
+margin_left = -437.0
+margin_top = 23.0
+margin_right = 437.0
+margin_bottom = 355.0
 custom_fonts/font = SubResource( 1 )
 text = "Shoot all the enemy planes to score!
 
+
+
 Answer quizzes to gain powerups!
+
+Chapters: 1,2,3 quizzes
+
+
 
 Timer for quiz to popup is shown in this bar!"
 align = 1
@@ -63,25 +71,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="timerBar" parent="instructions" instance=ExtResource( 8 )]
-margin_left = -62.0
-margin_top = 287.0
-margin_right = 273.0
-margin_bottom = 340.0
-value = 60.0
-tint_progress = Color( 0.521569, 0, 1, 1 )
-
 [node name="Controls" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -85.0
-margin_top = -368.0
+margin_top = -325.0
 margin_right = 81.0
-margin_bottom = -305.0
+margin_bottom = -262.0
 custom_fonts/font = SubResource( 1 )
-text = "Controls"
+text = "CONTROLS"
 align = 1
 valign = 1
 autowrap = true
@@ -90,49 +90,49 @@ __meta__ = {
 }
 
 [node name="W" parent="Controls" instance=ExtResource( 1 )]
-position = Vector2( -65, 160 )
+position = Vector2( -269, 124 )
 scale = Vector2( 4, 4 )
 frame = 86
 
 [node name="A" parent="Controls" instance=ExtResource( 1 )]
-position = Vector2( -134, 230 )
+position = Vector2( -338, 194 )
 scale = Vector2( 4, 4 )
 frame = 120
 
 [node name="S" parent="Controls" instance=ExtResource( 1 )]
-position = Vector2( -65, 230 )
+position = Vector2( -269, 194 )
 scale = Vector2( 4, 4 )
 frame = 121
 
 [node name="D" parent="Controls" instance=ExtResource( 1 )]
-position = Vector2( 8, 230 )
+position = Vector2( -196, 194 )
 scale = Vector2( 4, 4 )
 frame = 122
 
 [node name="Spacebar" parent="Controls" instance=ExtResource( 1 )]
-position = Vector2( 155, 230 )
+position = Vector2( -49, 183 )
 scale = Vector2( 4, 4 )
 frame = 235
 
 [node name="Spacebar2" parent="Controls" instance=ExtResource( 1 )]
-position = Vector2( 219, 230 )
+position = Vector2( 15, 183 )
 scale = Vector2( 4, 4 )
 frame = 236
 
 [node name="Spacebar3" parent="Controls" instance=ExtResource( 1 )]
-position = Vector2( 283, 230 )
+position = Vector2( 79, 183 )
 scale = Vector2( 4, 4 )
 frame = 237
 
 [node name="move" type="Label" parent="Controls"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -204.0
-margin_top = 249.5
-margin_right = -104.0
-margin_bottom = 287.5
+anchor_left = -1.657
+anchor_top = 4.079
+anchor_right = -1.657
+anchor_bottom = 4.079
+margin_left = -49.938
+margin_top = -22.977
+margin_right = 50.062
+margin_bottom = 15.023
 custom_fonts/font = SubResource( 1 )
 text = "Move"
 align = 1
@@ -142,23 +142,53 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="shooot" type="Label" parent="Controls"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 83.0
-margin_top = 250.5
-margin_right = 183.0
-margin_bottom = 288.5
+[node name="shoot" type="Label" parent="Controls"]
+anchor_left = 0.045
+anchor_top = 4.0
+anchor_right = 0.045
+anchor_bottom = 4.0
+margin_left = -55.47
+margin_top = -18.0
+margin_right = 55.53
+margin_bottom = 20.0
 custom_fonts/font = SubResource( 1 )
-text = "shoot"
+text = "Shoot"
 align = 1
 valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="timber" type="Label" parent="Controls"]
+anchor_left = 2.313
+anchor_top = 4.159
+anchor_right = 2.313
+anchor_bottom = 4.159
+margin_left = -90.958
+margin_top = -28.017
+margin_right = 91.042
+margin_bottom = 14.983
+custom_fonts/font = SubResource( 1 )
+text = "Timer bar"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timerBar" parent="Controls" instance=ExtResource( 8 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 137.0
+margin_top = 126.5
+margin_right = 472.0
+margin_bottom = 179.5
+value = 60.0
+tint_progress = Color( 0.521569, 0, 1, 1 )
 
 [node name="Go" type="Button" parent="."]
 anchor_left = 1.0

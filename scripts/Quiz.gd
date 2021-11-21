@@ -5,7 +5,7 @@ signal check_answer
 #signal wrong_answer
 
 export (String) var path = "res://json/questions-1.json"
-export (int) var number_of_questions = 5
+export (int) var number_of_questions = 30
 
 onready var question_label = $'window/question'
 onready var choices = $'choices'
@@ -46,7 +46,7 @@ func _ready() -> void:
 		get_node("choices").get_child(i).text = str(question["question-" + question_number]["choices"][i])
 	
 func generateRNG():
-	var number = int(rand_range(1, number_of_questions + 1))
+	var number = randi() % number_of_questions + 1
 	return number
 
 func _check_answer(answer:String):
@@ -87,3 +87,5 @@ func _on_Timer_timeout() -> void:
 	print("time ran out!")
 	Global1.emit_signal("resume")
 	Global1.emit_signal("answer_is_wrong")
+
+	

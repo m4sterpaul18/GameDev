@@ -2,7 +2,7 @@ extends Node
 
 signal on_player_life_changed(life)
 signal explode_sound
-
+signal screen_shake
 
 #signals if answer is correct
 signal answer_is_correct

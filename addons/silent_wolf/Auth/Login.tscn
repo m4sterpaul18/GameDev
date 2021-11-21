@@ -91,8 +91,8 @@ region_rect = Rect2( 0, 0, 363, 178 )
 
 [sub_resource type="DynamicFont" id=19]
 size = 40
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 3 )
 
 [node name="Login" type="TextureRect"]
@@ -115,8 +115,8 @@ custom_fonts/font = SubResource( 4 )
 text = ""
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 696, 368 )
-scale = Vector2( 0.812151, 0.812151 )
+position = Vector2( 696, 382.625 )
+scale = Vector2( 0.812151, 0.853003 )
 z_index = -1
 texture = ExtResource( 9 )
 
@@ -211,9 +211,9 @@ expand_icon = true
 
 [node name="ErrorMessage" type="Label" parent="Background/FormContainer"]
 visible = false
-margin_top = 522.0
-margin_right = 648.0
-margin_bottom = 559.0
+margin_top = 698.0
+margin_right = 1245.0
+margin_bottom = 735.0
 custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 autowrap = true

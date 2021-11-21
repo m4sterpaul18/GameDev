@@ -82,8 +82,10 @@ outline_color = Color( 0.854902, 0.0901961, 0.0901961, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=14]
-size = 32
-font_data = ExtResource( 3 )
+size = 64
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 7 )
 
 [node name="Register" type="TextureRect"]
 margin_right = 40.0
@@ -259,9 +261,9 @@ autowrap = true
 
 [node name="ErrorMessage" type="Label" parent="Background/FormContainer"]
 visible = false
-margin_top = 800.0
+margin_top = 603.0
 margin_right = 1881.0
-margin_bottom = 846.0
+margin_bottom = 665.0
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 autowrap = true
@@ -276,9 +278,9 @@ text = "Submit"
 
 [node name="ProcessingLabel" type="Label" parent="Background/FormContainer"]
 visible = false
-margin_top = 771.0
-margin_right = 1732.0
-margin_bottom = 808.0
+margin_top = 913.0
+margin_right = 1881.0
+margin_bottom = 977.0
 custom_fonts/font = SubResource( 14 )
 text = "Processing..."
 align = 1

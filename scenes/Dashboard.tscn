@@ -1,12 +1,12 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/Dashboard.gd" type="Script" id=2]
 [ext_resource path="res://ui/play/Button_15.png" type="Texture" id=3]
 [ext_resource path="res://ui/window/Windows_45.png" type="Texture" id=4]
-[ext_resource path="res://ui/rank/Button_54.png" type="Texture" id=5]
-[ext_resource path="res://ui/rank/Button_56.png" type="Texture" id=6]
-[ext_resource path="res://ui/rank/Button_55.png" type="Texture" id=7]
+[ext_resource path="res://ui/window/Window-1.png" type="Texture" id=5]
+[ext_resource path="res://ui/Button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/settings/Button_83.png" type="Texture" id=7]
 [ext_resource path="res://ui/play/Button_14.png" type="Texture" id=8]
 [ext_resource path="res://ui/play/Button_16.png" type="Texture" id=9]
 [ext_resource path="res://ui/logout/Button_33.png" type="Texture" id=10]
@@ -14,7 +14,7 @@
 [ext_resource path="res://ui/logout/Button_34.png" type="Texture" id=12]
 [ext_resource path="res://ui/settings/Button_82.png" type="Texture" id=13]
 [ext_resource path="res://ui/settings/Button_81.png" type="Texture" id=14]
-[ext_resource path="res://ui/settings/Button_83.png" type="Texture" id=15]
+[ext_resource path="res://ui/Button-normal.png" type="Texture" id=15]
 [ext_resource path="res://ui/window/Windows_12.png" type="Texture" id=16]
 [ext_resource path="res://ui/x-button/Button_99.png" type="Texture" id=17]
 [ext_resource path="res://ui/check-button/Button_05.png" type="Texture" id=18]
@@ -22,6 +22,8 @@
 [ext_resource path="res://ui/check-button/Button_06.png" type="Texture" id=20]
 [ext_resource path="res://ui/x-button/Button_98.png" type="Texture" id=21]
 [ext_resource path="res://ui/check-button/Button_07.png" type="Texture" id=22]
+[ext_resource path="res://ui/Button-pressed.png" type="Texture" id=23]
+[ext_resource path="res://ui/Button-hover.png" type="Texture" id=24]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -45,68 +47,88 @@ region_rect = Rect2( 0, 0, 176, 178 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 176, 178 )
-
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 176, 178 )
-
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 176, 178 )
-
-[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 15 )
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxTexture" id=8]
 texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxTexture" id=13]
+[sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 11 )
 region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxTexture" id=14]
+[sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=12]
+size = 20
+outline_size = 1
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 362, 178 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 362, 178 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 363, 178 )
+
+[sub_resource type="DynamicFont" id=17]
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 20
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=19]
 size = 22
 outline_size = 4
 outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=16]
+[sub_resource type="StyleBoxTexture" id=20]
 texture = ExtResource( 17 )
 region_rect = Rect2( 0, 0, 177, 178 )
 
-[sub_resource type="StyleBoxTexture" id=17]
+[sub_resource type="StyleBoxTexture" id=21]
 texture = ExtResource( 19 )
 region_rect = Rect2( 0, 0, 177, 178 )
 
-[sub_resource type="StyleBoxTexture" id=18]
+[sub_resource type="StyleBoxTexture" id=22]
 texture = ExtResource( 21 )
 region_rect = Rect2( 0, 0, 176, 178 )
 
-[sub_resource type="StyleBoxTexture" id=19]
+[sub_resource type="StyleBoxTexture" id=23]
 texture = ExtResource( 20 )
 region_rect = Rect2( 0, 0, 177, 175 )
 
-[sub_resource type="StyleBoxTexture" id=20]
+[sub_resource type="StyleBoxTexture" id=24]
 texture = ExtResource( 22 )
 region_rect = Rect2( 0, 0, 177, 175 )
 
-[sub_resource type="StyleBoxTexture" id=21]
+[sub_resource type="StyleBoxTexture" id=25]
 texture = ExtResource( 18 )
 region_rect = Rect2( 0, 0, 176, 175 )
 
@@ -121,11 +143,13 @@ __meta__ = {
 
 [node name="Welcome" type="TextureRect" parent="."]
 anchor_left = 0.5
+anchor_top = 0.26
 anchor_right = 0.5
-margin_left = -443.0
-margin_top = 64.0
-margin_right = 445.0
-margin_bottom = 192.0
+anchor_bottom = 0.26
+margin_left = -531.0
+margin_top = -71.68
+margin_right = 524.0
+margin_bottom = 96.32
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
@@ -133,27 +157,30 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Welcome"]
-anchor_left = 0.532
-anchor_top = 0.406
-anchor_right = 0.532
-anchor_bottom = 0.406
-margin_left = -224.416
-margin_top = -19.968
-margin_right = 175.584
-margin_bottom = 30.032
+anchor_left = 0.485
+anchor_top = 0.405
+anchor_right = 0.485
+anchor_bottom = 0.405
+margin_left = -199.675
+margin_top = -52.04
+margin_right = 225.325
+margin_bottom = 51.96
 rect_min_size = Vector2( 300, 40 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Greet" type="Label" parent="Welcome/CenterContainer"]
-margin_right = 400.0
-margin_bottom = 50.0
+margin_left = 12.0
+margin_top = 27.0
+margin_right = 412.0
+margin_bottom = 77.0
 rect_min_size = Vector2( 400, 50 )
 custom_fonts/font = SubResource( 1 )
 text = "Welcome Username"
 align = 1
 valign = 1
+autowrap = true
 clip_text = true
 max_lines_visible = 32
 __meta__ = {
@@ -162,13 +189,13 @@ __meta__ = {
 
 [node name="Menu Items" type="HBoxContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.917
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -330.0
-margin_top = 64.0
-margin_right = 330.0
-margin_bottom = 214.0
+anchor_bottom = 0.917
+margin_left = -240.0
+margin_top = -272.256
+margin_right = 240.0
+margin_bottom = -122.256
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
@@ -186,32 +213,153 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Ranking" type="Button" parent="Menu Items"]
+[node name="Settings" type="Button" parent="Menu Items"]
 margin_left = 170.0
-margin_right = 320.0
+margin_right = 310.0
 margin_bottom = 150.0
-rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 3
 custom_styles/hover = SubResource( 6 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/normal = SubResource( 8 )
 
-[node name="Settings" type="Button" parent="Menu Items"]
-margin_left = 340.0
-margin_right = 490.0
+[node name="Logout" type="Button" parent="Menu Items"]
+margin_left = 330.0
+margin_right = 480.0
 margin_bottom = 150.0
-rect_min_size = Vector2( 150, 0 )
+rect_min_size = Vector2( 150, 150 )
 custom_styles/hover = SubResource( 9 )
 custom_styles/pressed = SubResource( 10 )
 custom_styles/normal = SubResource( 11 )
 
-[node name="Logout" type="Button" parent="Menu Items"]
-margin_left = 510.0
-margin_right = 660.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 150, 150 )
-custom_styles/hover = SubResource( 12 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+[node name="addStudentId" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.733333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="addStudentId"]
+anchor_left = 0.5
+anchor_top = 0.417
+anchor_right = 0.5
+anchor_bottom = 0.417
+margin_left = -325.5
+margin_top = -159.256
+margin_right = 325.5
+margin_bottom = 286.744
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="addStudentId/TextureRect"]
+anchor_left = 0.496
+anchor_top = 0.41
+anchor_right = 0.496
+anchor_bottom = 0.41
+margin_left = -215.896
+margin_top = -119.86
+margin_right = 216.104
+margin_bottom = 184.14
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="addStudentId/TextureRect/VBoxContainer"]
+margin_right = 432.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 12 )
+text = "Please enter your student-id"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="id_input" type="LineEdit" parent="addStudentId/TextureRect/VBoxContainer"]
+margin_top = 68.0
+margin_right = 432.0
+margin_bottom = 173.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 13 )
+align = 1
+max_length = 10
+placeholder_text = "xxxx-xxxxx"
+placeholder_alpha = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="error" type="Label" parent="addStudentId/TextureRect/VBoxContainer"]
+visible = false
+margin_top = 164.0
+margin_right = 432.0
+margin_bottom = 207.0
+custom_fonts/font = SubResource( 12 )
+text = "Please enter a valid student-id"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="add_id" parent="addStudentId/TextureRect/VBoxContainer" instance=ExtResource( 6 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 198.0
+margin_right = 432.0
+margin_bottom = 304.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+
+[node name="success" type="Label" parent="addStudentId/TextureRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.374
+anchor_right = 0.52
+anchor_bottom = 0.41
+margin_left = -235.0
+margin_top = -71.804
+margin_right = 232.98
+margin_bottom = 70.14
+custom_fonts/font = SubResource( 18 )
+text = "Your student I.D is now connected to your account. 
+
+You can change your student I.D in the settings if needed"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="okay" parent="addStudentId/TextureRect/success" instance=ExtResource( 6 )]
+anchor_left = 0.481
+anchor_top = 1.534
+anchor_right = 0.481
+anchor_bottom = 1.534
+margin_left = -215.861
+margin_top = -30.992
+margin_right = 216.139
+margin_bottom = 31.008
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "Okay"
 
 [node name="LogoutWindow" type="ColorRect" parent="."]
 visible = false
@@ -245,7 +393,7 @@ margin_left = -235.0
 margin_top = -48.0
 margin_right = 257.0
 margin_bottom = 5.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 19 )
 text = "Are you sure you want 
 to logout?!"
 align = 1
@@ -271,21 +419,23 @@ __meta__ = {
 margin_right = 81.0
 margin_bottom = 70.0
 size_flags_horizontal = 3
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 17 )
-custom_styles/normal = SubResource( 18 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
 
 [node name="Yes" type="Button" parent="LogoutWindow/TextureRect/HBoxContainer"]
 margin_left = 111.0
 margin_right = 192.0
 margin_bottom = 70.0
 size_flags_horizontal = 3
-custom_styles/hover = SubResource( 19 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/normal = SubResource( 21 )
+custom_styles/hover = SubResource( 23 )
+custom_styles/pressed = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
 
 [connection signal="pressed" from="Menu Items/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="Menu Items/Ranking" to="." method="_on_Ranking_pressed"]
+[connection signal="pressed" from="Menu Items/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Menu Items/Logout" to="." method="_on_Logout_pressed"]
+[connection signal="pressed" from="addStudentId/TextureRect/VBoxContainer/add_id" to="." method="_on_add_id_pressed"]
+[connection signal="pressed" from="addStudentId/TextureRect/success/okay" to="." method="_on_okay_pressed"]
 [connection signal="pressed" from="LogoutWindow/TextureRect/HBoxContainer/No" to="." method="_on_No_pressed"]
 [connection signal="pressed" from="LogoutWindow/TextureRect/HBoxContainer/Yes" to="." method="_on_Yes_pressed"]

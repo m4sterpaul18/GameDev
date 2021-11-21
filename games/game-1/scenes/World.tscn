@@ -14,12 +14,28 @@ extents = Vector2( 10, 504 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 732.0, 732.0 ]
+}
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="shake_timer" type="Timer" parent="Camera"]
+wait_time = 0.2
 
 [node name="background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -22.0
+margin_right = 1426.0
+margin_bottom = 823.0
 rect_min_size = Vector2( 1366, 768 )
-color = Color( 0, 0.513726, 0.52549, 1 )
+color = Color( 0, 0.415686, 1, 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -109,9 +125,11 @@ position = Vector2( -2, 148 )
 shape = SubResource( 1 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.564706 )
 position = Vector2( 672, -160 )
-amount = 75
+amount = 50
 lifetime = 25.0
+speed_scale = 2.0
 randomness = 0.13
 emission_shape = 2
 emission_rect_extents = Vector2( 900, 1 )
@@ -122,7 +140,7 @@ initial_velocity = 987.01
 initial_velocity_random = 0.7
 angle = 355.3
 angle_random = 0.41
-scale_amount = 30.0
+scale_amount = 15.0
 scale_amount_random = 1.0
 __meta__ = {
 "_edit_lock_": true
@@ -130,14 +148,14 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 684, 721 )
-z_index = 100
+z_index = 2
 
 [node name="spawn_timer" type="Timer" parent="."]
 wait_time = 0.7
 autostart = true
 
 [node name="generate_quiz_timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
@@ -152,8 +170,8 @@ margin_right = -309.0
 margin_bottom = -469.0
 rect_rotation = 90.0
 rect_scale = Vector2( 1.5, 0.5 )
-max_value = 30.0
-value = 30.0
+max_value = 20.0
+value = 20.0
 tint_progress = Color( 0.521569, 0, 1, 1 )
 script = ExtResource( 7 )
 
@@ -166,6 +184,7 @@ autoplay = true
 layer = 2
 
 [connection signal="tree_entered" from="." to="." method="_on_World_tree_entered"]
+[connection signal="timeout" from="Camera/shake_timer" to="." method="_on_shake_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/retry" to="." method="_on_retry_pressed"]
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="generate_quiz_timer" to="." method="_on_generate_quiz_timer_timeout"]

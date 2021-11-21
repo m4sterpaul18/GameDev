@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://games/game-1/sprites/Ships/ship_0000.png" type="Texture" id=1]
 [ext_resource path="res://games/game-1/scripts/Player.gd" type="Script" id=2]
@@ -9,13 +9,13 @@
 [ext_resource path="res://sounds/Powerup.wav" type="AudioStream" id=7]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=1]
 size = 24
 outline_size = 1
 outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=2]
 resource_name = "+bullet"
 length = 2.0
 tracks/0/type = "value"
@@ -55,7 +55,7 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=3]
 resource_name = "+hp"
 length = 2.0
 tracks/0/type = "value"
@@ -95,7 +95,7 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=4]
 resource_name = "+speed"
 length = 2.0
 tracks/0/type = "value"
@@ -267,7 +267,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.588235 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("death_sound:playing")
@@ -283,6 +283,58 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "multishot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("powerup label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("powerup label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "multishot" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("powerup label:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -319,8 +371,8 @@ margin_left = -153.0
 margin_top = -76.0
 margin_right = 159.0
 margin_bottom = -46.0
-custom_fonts/font = SubResource( 12 )
-text = "- bullet speed"
+custom_fonts/font = SubResource( 1 )
+text = "multishot"
 align = 1
 valign = 1
 percent_visible = 0.0
@@ -329,13 +381,15 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/+bullet = SubResource( 13 )
-anims/+hp = SubResource( 14 )
-anims/+speed = SubResource( 15 )
+pause_mode = 2
+anims/+bullet = SubResource( 2 )
+anims/+hp = SubResource( 3 )
+anims/+speed = SubResource( 4 )
 anims/-bullet = SubResource( 5 )
 anims/-hp = SubResource( 6 )
 anims/-speed = SubResource( 7 )
 anims/damaged = SubResource( 8 )
+anims/multishot = SubResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.5, 0 )
@@ -403,6 +457,10 @@ color_ramp = SubResource( 11 )
 [node name="shoot_cooldown" type="Timer" parent="."]
 one_shot = true
 
+[node name="multishot_timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [node name="shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -15.0
@@ -417,10 +475,22 @@ volume_db = -15.0
 
 [node name="powerup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -15.0
+volume_db = -5.0
 
 [node name="debuff" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -15.0
+volume_db = -5.0
+
+[node name="target" type="Node2D" parent="."]
+
+[node name="main" type="Position2D" parent="target"]
+position = Vector2( 0, -43 )
+
+[node name="left" type="Position2D" parent="target"]
+position = Vector2( -38, -23 )
+
+[node name="right" type="Position2D" parent="target"]
+position = Vector2( 39, -23 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="multishot_timer" to="." method="_on_multishot_timer_timeout"]

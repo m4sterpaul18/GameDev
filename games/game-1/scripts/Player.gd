@@ -1,16 +1,21 @@
 extends KinematicBody2D
 class_name Player
 
+#ship variables
 export (float) var speed = 200
 export (float) var shoot_cooldown = 0.6
 export (int) var hp = 3
-
+export var multishot = false
 
 var velocity = Vector2.ZERO
 var dir = Vector2.ZERO
 
+#wings position
+onready var wing_positions = $ "target"
+
 onready var bullet = preload("res://games/game-1/scenes/Bullet.tscn")
 onready var shoot_timer = $shoot_cooldown
+onready var multishot_timer = $"multishot_timer"
 
 #sounds
 onready var shoot_sound = $"shoot"
@@ -31,6 +36,7 @@ func _ready() -> void:
 	Global1.connect("explode_sound",self,"_play_explode_sound")
 	Global1.emit_signal("on_player_life_changed",hp)
 	Global1.connect("damage_player_by_enemy",self,"damage_player")
+	
 
 func _process(delta: float) -> void:
 	if hp <= 0:
@@ -44,9 +50,16 @@ func get_input():
 	if Input.is_action_pressed("shoot") and shoot_timer.is_stopped():
 		shoot_sound.play()
 		shoot_timer.start(shoot_cooldown)
-		var player_bullet = bullet.instance()
-		player_bullet.global_position = position
-		get_tree().current_scene.add_child(player_bullet)
+		if(multishot):
+			for child in wing_positions.get_children():
+				var player_bullet = bullet.instance()
+				player_bullet.global_position = child.global_position
+				get_tree().current_scene.add_child(player_bullet)
+		else:
+			var firing = get_node("target/main")
+			var player_bullet = bullet.instance()
+			player_bullet.global_position = firing.global_position
+			get_tree().current_scene.add_child(player_bullet)
 		
 	dir.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	dir.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
@@ -65,13 +78,14 @@ func _on_Area2D_area_entered(area: Area2D) -> void:
 func damage_player():
 	hp -= 1
 	Global1.emit_signal("on_player_life_changed",hp)
+	Global1.emit_signal("screen_shake")
 	animation.play("damaged")
 		
 func _play_explode_sound():
 	explode_sound.play()
 
 func _answer_is_correct():
-	var rng = int(rand_range(1,4))
+	var rng = randi() % 4 + 1
 	generate_powerup(rng)
 	
 
@@ -92,6 +106,9 @@ func generate_powerup(rng:int):
 	elif rng == 3:
 		animation.play("+bullet")
 		changeBulletSpeed(-0.1)
+	elif rng == 4:
+		animation.play("multishot")
+		activateMultishot()
 	
 func generate_debuffs(rng:int):
 	debuff_sound.play()
@@ -99,13 +116,16 @@ func generate_debuffs(rng:int):
 	if rng == 1:
 		animation.play("-hp")
 		changeHP(-1)
+		Global1.emit_signal("screen_shake")
 	elif rng == 2:
 		animation.play("-speed")
 		changeSpeed(-100)
+		Global1.emit_signal("screen_shake")
 	elif rng == 3:
 		animation.play("-bullet")
 		changeBulletSpeed(0.1)
-
+		Global1.emit_signal("screen_shake")
+	
 func changeHP(amount:int):
 	hp += amount
 	Global1.emit_signal("on_player_life_changed",hp)
@@ -131,3 +151,11 @@ func changeBulletSpeed(amount:float):
 		shoot_cooldown += amount
 		
 	print("new cooldown is:" + str(shoot_cooldown))
+
+func activateMultishot():
+	multishot = true
+	multishot_timer.start()
+	
+
+func _on_multishot_timer_timeout() -> void:
+	multishot = false

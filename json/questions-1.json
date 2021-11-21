@@ -1,52 +1,302 @@
 {
    "question-1":{
       "question":"What is called for an artificial language that can be used to control the behaviour of a machine, particularly a computer",
-      "answer":"programming language",
+      "answer":"Programming language",
       "choices":[
-         "c language",
-         "java language",
-         "programming language",
-         "artificial intelligence"
+         "C language",
+         "Java language",
+         "Programming language",
+         "Artificial intelligence"
       ]
    },
    "question-2":{
-      "question":"What is called for machine that taking inputs and output?",
-      "answer":"computer",
+      "question":"A machine that takes input and output",
+      "answer":"Computer",
       "choices":[
-         "type writter",
-         "computer",
-         "programming",
-         "microcomputer"
+         "Type writter",
+         "Computer",
+         "Programming",
+         "Microcomputer"
       ]
    },
    "question-3":{
-      "question":"How computer think?",
-      "answer":"binary",
+      "question":"How do computer think?",
+      "answer":"Binary",
       "choices":[
-         "inputs",
-         "numbers",
-         "words",
-         "binary"
+         "Inputs",
+         "Numbers",
+         "Words",
+         "Binary"
       ]
    },
    "question-4":{
       "question":"What kind of language is difficult for human to read?",
-      "answer":"low-level programming",
+      "answer":"Low-level programming",
       "choices":[
-         "high-level programming",
-         "low-level programming",
-         "artificial intelligence",
-         "none of the above"
+         "High-level programming",
+         "Low-level programming",
+         "Artificial intelligence",
+         "None of the above"
       ]
    },
    "question-5":{
       "question":"What kind of words used in High-level language?",
-      "answer":"objects",
+      "answer":"Objects",
       "choices":[
-         "english",
-         "variables",
-         "objects",
-         "string"
+         "English",
+         "Variables",
+         "Objects",
+         "String"
+      ]
+   },
+   "question-6":{
+      "question":"What are the 2 types of Flowchart?",
+      "answer":"System and Program Flowchart",
+      "choices":[
+         "Big and Bang Flowchart",
+         "Systematic and Progress Flowchart",
+         "System and Program Flowchart",
+         "Autoboots and Nan Flowchart"
+      ]
+   },
+   "question-7":{
+      "question":"What are the three basic operation of computer program?",
+      "answer":"Input,Process,Output",
+      "choices":[
+         "Input,Process,Output",
+         "Enter,Process,Display",
+         "Input,Operation,Output",
+         "Enter,Process,Output"
+      ]
+   },
+   "question-8":{
+      "question":"What is an Algorithm?",
+      "answer":"English way of expressing solution",
+      "choices":[
+         "Used to fix errors",
+         "Way to run your program",
+         "English way of expressing solution",
+         "A coding etiquette"
+      ]
+   },
+    "question-9":{
+      "question":"What is a Flowchart?",
+      "answer":"Graphical representation of a program",
+      "choices":[
+         "A shape that commands program",
+         "A way on ordering a program",
+         "Graphical representation of a program",
+         "none of the above"
+      ]
+   },
+    "question-10":{
+      "question":"Which of these are the advantages of Flowcharts?",
+      "answer":"Visual Clarity",
+      "choices":[
+         "Bad documentation",
+         "Visual Clarity",
+         "Ineffective Coordination",
+         "None of the above"
+      ]
+   },
+   "question-11":{
+      "question":"Who developed C programming Language?",
+      "answer":"Dennis Ritchie",
+      "choices":[
+         "Rasmus Lerdorf",
+         "Tim Berners-Lee",
+         "Dennis Ritchie",
+         "Brendan Eich"
+      ]
+   },
+   "question-12":{
+      "question":"What function is used to display output in C program?",
+      "answer":"printf()",
+      "choices":[
+         "view()",
+         "printf()",
+         "display()",
+         "output()"
+      ]
+   },
+   "question-13":{
+      "question":"C language was designed to run on what kind of machine?",
+      "answer":"Micro computer",
+      "choices":[
+         "Super Computer",
+         "A.I Computer",
+         "Micro computer",
+         "ATX Computer"
+      ]
+   },
+   "question-14":{
+      "question":"What level of programming is C language?",
+      "answer":"Mid-level",
+      "choices":[
+         "Mid-level",
+         "Low-level",
+         "High-level",
+         "Basic-level"
+      ]
+   },
+   "question-15":{
+      "question":"What is the purpose of Main() function in C program?",
+      "answer":"Starting point of code execution",
+      "choices":[
+         "Brain of the program code",
+         "Starting point of code execution",
+         "Detects errors in program",
+         "Used to design your entire program"
+      ]
+   },
+   "question-16":{
+      "question":"What function is used to take inputs from user?",
+      "answer":"scanf()",
+      "choices":[
+         "scanf()",
+         "input()",
+         "inputs()",
+         "scand()"
+      ]
+   },
+   "question-17":{
+      "question":"In a flowchart, an input or output instruction is represented by",
+      "answer":"A parallelogram",
+      "choices":[
+         "A rectangle",
+         "A rhombus",
+         "A parallelogram",
+         "A circle"
+      ]
+   },
+   "question-18":{
+      "question":"In a flowchart, a calculation (process) is represented by",
+      "answer":"A rectangle",
+      "choices":[
+         "A rectangle",
+         "An arrow",
+         "A diamond",
+         "An oblong"
+      ]
+   },
+   "question-19":{
+      "question":"Why is a flowchart required?",
+      "answer":"Plan a program before development",
+      "choices":[
+         "Plan a program before development",
+         "It is easy to use",
+         "To analyze the program",
+         "To execute a program"
+      ]
+   },
+   "question-20":{
+      "question":"What is the purpose of #include <stdio.h> in C program?",
+      "answer":"Contains Input/Output Functions",
+      "choices":[
+         "Contains math functionalities of C",
+         "Contains database of C language",
+         "Contains Input/Output Functions",
+         "Used to be the mainframe of program"
+      ]
+   },
+   "question-21":{
+      "question":"In a flowchart, how are symbols connected?",
+      "answer":"Lines & arrows",
+      "choices":[
+         "Lines & arrows",
+         "Connectors",
+         "Dash lines & numbers",
+         "Symbols"
+      ]
+   },
+   "question-22":{
+      "question":"HTML stands for what?",
+      "answer":"HyperText Markup Language",
+      "choices":[
+         "How To Make Lumpia",
+         "HyperText Makeup Language",
+         "HyperText Markup Language",
+         "HyperText Maker Language"
+      ]
+   },
+   "question-23":{
+      "question":"Who Invented Flowchart?",
+      "answer":"Frank Gilbreth",
+      "choices":[
+         "Dennis Ritchie",
+         "Frank Gilbreth",
+         "James Flowsmith",
+         "Rastaman"
+      ]
+   },
+   "question-24":{
+      "question":"In a flowchart, Start/End Symbol marks the starting or ending point of the system. What shape is this?",
+      "answer":"Oval shape",
+      "choices":[
+         "Oval shape",
+         "Rectangle shape",
+         "Diamond shape",
+         "Circle shape"
+      ]
+   },
+   "question-25":{
+      "question":"In a flowchart, A Decision symbol is represented by what shape?",
+      "answer":"Diamond shape",
+      "choices":[
+         "Diamond shape",
+         "Rectangle shape",
+         "Pill shape",
+         "Arrows"
+      ]
+   },
+   "question-26":{
+      "question":"What is a Binary?",
+      "answer":"String of 1s and 0s",
+      "choices":[
+         "String of 1s and 2s",
+         "String of -1s and 0",
+         "String of 1s and 0s",
+         "String of 1 and 2"
+      ]
+   },
+   "question-27":{
+      "question":"A ________ is a procedure or formula used for solving a problem",
+      "answer":"Algorithm",
+      "choices":[
+         "Algorithm",
+         "Pseudocode",
+         "Program",
+         "Computer"
+      ]
+   },
+   "question-28":{
+      "question":"Is a formal language comprising a set of strings that produce various kinds of machine code output",
+      "answer":"Programming language",
+      "choices":[
+         "Programming language",
+         "Binary",
+         "Pseudocode",
+         "None of the above"
+      ]
+   },
+   "question-29":{
+      "question":"Below are programming languages except ______",
+      "answer":"JAV script",
+      "choices":[
+         "JAV script",
+         "PHP",
+         "C",
+         "Python"
+      ]
+   },
+   "question-30":{
+      "question":"Below are the importance of programming in our everyday life except ______",
+      "answer":"Hacking",
+      "choices":[
+         "Automation",
+         "Hacking",
+         "Communication",
+         "Knowledge"
       ]
    }
 }

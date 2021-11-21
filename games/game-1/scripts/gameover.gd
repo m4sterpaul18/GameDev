@@ -4,7 +4,7 @@ onready var score = $"VBoxContainer/score"
 onready var success_label = $"VBoxContainer/success"
 onready var submit_button =$'VBoxContainer/submit'
 
-export var ldboard_name = "main"
+export var ldboard_name = "C-planes"
 
 func _ready() -> void:
 	success_label.visible = false
@@ -23,6 +23,11 @@ func _on_home_pressed() -> void:
 
 func _on_submit_pressed() -> void:
 	submit_button.visible = false
-	SilentWolf.Scores.persist_score(SilentWolf.Auth.logged_in_player,score.text,ldboard_name)
+	
+	var metadata = {
+		'studentId': SilentWolf.Players.player_data['student-id']
+	}
+	
+	SilentWolf.Scores.persist_score(SilentWolf.Auth.logged_in_player,score.text,ldboard_name,metadata)
 	success_label.visible = true
 

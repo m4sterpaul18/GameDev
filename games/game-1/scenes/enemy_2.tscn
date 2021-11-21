@@ -5,7 +5,7 @@
 
 [node name="enemy_2" instance=ExtResource( 2 )]
 hp = 1
-speed = 650.0
+speed = 690.0
 points = 10
 
 [node name="Sprite" parent="." index="0"]
