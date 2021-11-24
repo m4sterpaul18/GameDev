@@ -1,0 +1,200 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://games/game-2/scenes/containers.tscn" type="PackedScene" id=2]
+[ext_resource path="res://games/game-2/scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://games/game-2/scenes/lives_container.tscn" type="PackedScene" id=4]
+[ext_resource path="res://games/game-1/scenes/gameover.tscn" type="PackedScene" id=5]
+[ext_resource path="res://games/game-2/scripts/gameover2.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 23, 470 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 130.0, 577.0 ]
+}
+
+[node name="fish_spawn" type="Node2D" parent="."]
+z_index = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="barrels" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 467.0
+margin_top = 713.0
+margin_right = 1067.0
+margin_bottom = 822.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_constants/separation = 200
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="char" parent="barrels" instance=ExtResource( 2 )]
+margin_right = 0.0
+margin_bottom = 109.0
+type = "char"
+
+[node name="CHAR" type="Label" parent="barrels/char"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_right = 32.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+text = "Char"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="int" parent="barrels" instance=ExtResource( 2 )]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 109.0
+type = "int"
+
+[node name="INT" type="Label" parent="barrels/int"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -24.0
+margin_right = 24.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+text = "INT"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="float" parent="barrels" instance=ExtResource( 2 )]
+margin_left = 400.0
+margin_right = 400.0
+margin_bottom = 109.0
+type = "float"
+
+[node name="FLOAT" type="Label" parent="barrels/float"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 40.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+text = "FLOAT"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="array" parent="barrels" instance=ExtResource( 2 )]
+margin_left = 600.0
+margin_right = 600.0
+margin_bottom = 109.0
+type = "array"
+
+[node name="ARRAY" type="Label" parent="barrels/array"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 40.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+text = "array"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spawn_time" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -668.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="CanvasLayer/UI"]
+anchor_right = 1.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="lives_container" parent="CanvasLayer/UI" instance=ExtResource( 4 )]
+anchor_left = 0.106
+anchor_top = 0.5
+anchor_right = 0.106
+anchor_bottom = 0.5
+margin_left = -124.796
+margin_top = -35.5
+margin_right = 1.20401
+margin_bottom = 4.50001
+custom_constants/separation = 5
+
+[node name="game_over" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -352.0
+margin_top = -274.0
+margin_right = 693.0
+margin_bottom = 442.0
+script = ExtResource( 6 )
+ldboard_name = "C-planes"
+
+[node name="finish_line" type="Area2D" parent="." groups=[
+"end",
+]]
+position = Vector2( 1386, 0 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish_line"]
+position = Vector2( 43, 382 )
+shape = SubResource( 3 )
+
+[connection signal="timeout" from="spawn_time" to="." method="_on_spawn_time_timeout"]

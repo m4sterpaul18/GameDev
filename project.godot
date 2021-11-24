@@ -41,6 +41,7 @@ config/windows_native_icon="res://game_icon.ico"
 
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Global1="*res://scripts/Global1.gd"
+Global2="*res://scripts/Global2.gd"
 
 [display]
 
@@ -86,6 +87,18 @@ shoot={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_render/layer_1="fish"
+2d_physics/layer_1="fish"
+2d_render/layer_2="container"
+2d_physics/layer_2="container"
 
 [physics]
 

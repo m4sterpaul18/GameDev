@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/game-2/sprites/barrel.png" type="Texture" id=1]
+
+[node name="lives" type="TextureRect"]
+anchor_left = 0.012
+anchor_top = 0.021
+anchor_right = 0.012
+anchor_bottom = 0.021
+margin_left = -16.392
+margin_top = -16.128
+margin_right = 15.608
+margin_bottom = 15.872
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
