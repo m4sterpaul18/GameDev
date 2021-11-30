@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://games/game-2/sprites/barrel.png" type="Texture" id=1]
 [ext_resource path="res://games/game-2/scripts/containers.gd" type="Script" id=2]
 [ext_resource path="res://games/game-2/sounds/splash.wav" type="AudioStream" id=3]
+[ext_resource path="res://games/game-2/sounds/wrong.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.33333, 3.33333 )
@@ -38,6 +39,7 @@ tracks/1/keys = {
 [node name="barrels" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -59,4 +61,8 @@ anims/squash = SubResource( 2 )
 
 [node name="splash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -5.0
+volume_db = -10.0
+
+[node name="wrong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0

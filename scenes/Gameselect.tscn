@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Gameselect.gd" type="Script" id=1]
 [ext_resource path="res://games/game-1/sprites/Ships/ship_0000.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://themes/Normal-button.tres" type="StyleBox" id=5]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://ui/Back.tscn" type="PackedScene" id=7]
+[ext_resource path="res://games/game-2/sprites/global.png" type="Texture" id=8]
 
 [sub_resource type="Theme" id=1]
 
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -33,16 +35,16 @@ margin_top = -187.5
 margin_right = 256.5
 margin_bottom = 187.5
 theme = SubResource( 1 )
-custom_constants/vseparation = 5
-custom_constants/hseparation = 5
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Plane" type="Button" parent="GridContainer"]
-margin_right = 167.0
-margin_bottom = 185.0
+margin_right = 157.0
+margin_bottom = 177.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -51,14 +53,14 @@ custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
 
 [node name="plane" type="Sprite" parent="GridContainer/Plane"]
-position = Vector2( 81, 95 )
+position = Vector2( 77.5, 91.5 )
 scale = Vector2( 2.375, 2.375 )
 texture = ExtResource( 2 )
 
-[node name="Button2" type="Button" parent="GridContainer"]
-margin_left = 172.0
-margin_right = 339.0
-margin_bottom = 185.0
+[node name="C-foods" type="Button" parent="GridContainer"]
+margin_left = 177.0
+margin_right = 334.0
+margin_bottom = 177.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -66,12 +68,19 @@ custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
 custom_fonts/font = SubResource( 2 )
-text = "Soon!"
+
+[node name="fish" type="Sprite" parent="GridContainer/C-foods"]
+position = Vector2( 84.5, 91.5 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 8 )
+hframes = 4
+vframes = 4
+frame = 1
 
 [node name="Button3" type="Button" parent="GridContainer"]
-margin_left = 344.0
+margin_left = 354.0
 margin_right = 511.0
-margin_bottom = 185.0
+margin_bottom = 177.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -82,9 +91,9 @@ custom_fonts/font = SubResource( 2 )
 text = "Soon!"
 
 [node name="Button4" type="Button" parent="GridContainer"]
-margin_top = 190.0
-margin_right = 167.0
-margin_bottom = 375.0
+margin_top = 197.0
+margin_right = 157.0
+margin_bottom = 374.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -95,10 +104,10 @@ custom_fonts/font = SubResource( 2 )
 text = "Soon!"
 
 [node name="Button5" type="Button" parent="GridContainer"]
-margin_left = 172.0
-margin_top = 190.0
-margin_right = 339.0
-margin_bottom = 375.0
+margin_left = 177.0
+margin_top = 197.0
+margin_right = 334.0
+margin_bottom = 374.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -109,10 +118,10 @@ custom_fonts/font = SubResource( 2 )
 text = "Soon!"
 
 [node name="Button6" type="Button" parent="GridContainer"]
-margin_left = 344.0
-margin_top = 190.0
+margin_left = 354.0
+margin_top = 197.0
 margin_right = 511.0
-margin_bottom = 375.0
+margin_bottom = 374.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -125,7 +134,7 @@ text = "Soon!"
 [node name="Back" parent="." instance=ExtResource( 7 )]
 
 [connection signal="pressed" from="GridContainer/Plane" to="." method="_on_Plane_pressed"]
-[connection signal="pressed" from="GridContainer/Button2" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="GridContainer/C-foods" to="." method="_on_Cfoods_pressed"]
 [connection signal="pressed" from="GridContainer/Button3" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="GridContainer/Button4" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="GridContainer/Button5" to="." method="_on_Button_pressed"]

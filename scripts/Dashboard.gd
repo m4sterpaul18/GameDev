@@ -8,6 +8,7 @@ var currentUser = SilentWolf.Auth.logged_in_player;
 
 onready var student_id_window = $"addStudentId"
 onready var student_id_input = $"addStudentId/TextureRect/VBoxContainer"
+onready var loading_window = $"loading"
 
 #input
 onready var student_id = $"addStudentId/TextureRect/VBoxContainer/id_input"
@@ -21,8 +22,10 @@ func _ready():
 	
 	#var item_to_delete = { "student-id": "" }
 	#SilentWolf.Players.delete_player_data(currentUser, item_to_delete)
-
+	
+	loading_window.visible = true
 	yield(SilentWolf.Players.get_player_data(currentUser), "sw_player_data_received")
+	loading_window.visible = false
 	
 	if(! SilentWolf.Players.player_data.empty()):
 		student_id_window.visible = false
@@ -53,7 +56,7 @@ func _on_No_pressed() -> void:
 func _on_Yes_pressed() -> void:
 	#logout player
 	SilentWolf.Auth.logout_player()
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	get_tree().quit()
 
 
 func _on_add_id_pressed() -> void:
