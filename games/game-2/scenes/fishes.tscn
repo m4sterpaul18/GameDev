@@ -45,6 +45,7 @@ texture = ExtResource( 1 )
 flip_h = true
 hframes = 4
 vframes = 4
+frame = 11
 
 [node name="Label" type="Label" parent="."]
 margin_left = -75.6

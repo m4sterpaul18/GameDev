@@ -4,7 +4,7 @@ onready var fish_sprite = $"Sprite"
 onready var text_label = $"Label"
 onready var animation = $"AnimationPlayer"
 
-export(float) var speed = rand_range(75.0,170.0)
+export(float) var speed = rand_range(40.0,130.0)
 
 var words = ['cat','dog','rat','car','var']
 

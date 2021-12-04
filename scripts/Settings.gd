@@ -13,7 +13,8 @@ onready var success_window = $"success_window"
 
 func _ready() -> void:
 	if currentUser == "celestial":
-		$"wipe_ldboard".visible = true
+		#$"wipe_ldboard".visible = true
+		print('hello admin')
 		
 	success_window.visible = false
 
@@ -68,3 +69,10 @@ func _on_OKAY_pressed() -> void:
 
 func _on_Button_pressed() -> void:
 	 SilentWolf.Scores.wipe_leaderboard("C-planes")
+
+
+func _on_CheckButton_toggled(button_pressed: bool) -> void:
+	if !button_pressed:
+		OS.window_fullscreen = false
+	else:
+		OS.window_fullscreen = true
