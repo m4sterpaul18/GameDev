@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://games/game-3/sprites/ship_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://games/game-3/scripts/Boat.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 53 )
+
+[node name="Boat" type="Node2D"]
+script = ExtResource( 2 )
+min_speed = 40.0
+max_speed = 50.5
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 204, 115, 66, 113 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="particles 1" type="CPUParticles2D" parent="."]
+position = Vector2( -4, 55 )
+rotation = 1.0472
+z_index = -1
+amount = 15
+lifetime = 1.5
+randomness = 0.5
+direction = Vector2( -1, 0 )
+spread = 5.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+angular_velocity = 406.15
+angular_velocity_random = 0.64
+scale_amount = 4.0
+scale_amount_random = 1.0
+color = Color( 0.490196, 0.717647, 0.984314, 1 )
+
+[node name="particles 2" type="CPUParticles2D" parent="."]
+position = Vector2( 4, 55 )
+rotation = 2.0944
+z_index = -1
+amount = 15
+lifetime = 1.5
+randomness = 0.5
+direction = Vector2( -1, 0 )
+spread = 5.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+angular_velocity = 406.15
+angular_velocity_random = 0.64
+scale_amount = 4.0
+scale_amount_random = 1.0
+color = Color( 0.490196, 0.717647, 0.984314, 1 )
+
+[node name="boost" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ai_timer_boost" type="Timer" parent="."]
+one_shot = true
+
+[node name="boost" type="Timer" parent="ai_timer_boost"]
+autostart = true
+
+[connection signal="timeout" from="ai_timer_boost/boost" to="." method="_on_boost_timeout"]

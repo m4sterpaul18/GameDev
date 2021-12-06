@@ -22,13 +22,16 @@ func _ready() -> void:
 	
 func _on_user_input_text_entered(new_text: String) -> void:
 	var code_question = get_node("window/code").get_children()
+	
+	#correct
 	if new_text == code_question[0].answer:
+		Global2.emit_signal("correct_answer")
 		user_input.text = ''
-		print('correct!')
-		instance_question()
+		instance_question()		
+	#wrong
 	else:
+		Global2.emit_signal("wrong_answer")
 		user_input.text = ''
-		print('wrong!')
 		print('correct answer:' + str(code_question[0].answer))
 
 
