@@ -1,6 +1,8 @@
 extends Control
 
 
+func _ready() -> void:
+	Audiomanager.playing = false
 
 func _on_Back_pressed() -> void:
 	get_tree().change_scene("res://scenes/Gameselect.tscn")

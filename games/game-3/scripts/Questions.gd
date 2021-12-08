@@ -13,7 +13,27 @@ var questions = [
 	preload("res://games/game-3/scenes/questions/7.tscn"),
 	preload("res://games/game-3/scenes/questions/8.tscn"),
 	preload("res://games/game-3/scenes/questions/9.tscn"),
-	preload("res://games/game-3/scenes/questions/10.tscn")
+	preload("res://games/game-3/scenes/questions/10.tscn"),
+	preload("res://games/game-3/scenes/questions/11.tscn"),
+	preload("res://games/game-3/scenes/questions/12.tscn"),
+	preload("res://games/game-3/scenes/questions/13.tscn"),
+	preload("res://games/game-3/scenes/questions/14.tscn"),
+	preload("res://games/game-3/scenes/questions/15.tscn"),
+	preload("res://games/game-3/scenes/questions/16.tscn"),
+	preload("res://games/game-3/scenes/questions/17.tscn"),
+	preload("res://games/game-3/scenes/questions/18.tscn"),
+	preload("res://games/game-3/scenes/questions/19.tscn"),
+	preload("res://games/game-3/scenes/questions/20.tscn"),
+	preload("res://games/game-3/scenes/questions/21.tscn"),
+	preload("res://games/game-3/scenes/questions/22.tscn"),
+	preload("res://games/game-3/scenes/questions/23.tscn"),
+	preload("res://games/game-3/scenes/questions/24.tscn"),
+	preload("res://games/game-3/scenes/questions/25.tscn"),
+	preload("res://games/game-3/scenes/questions/26.tscn"),
+	preload("res://games/game-3/scenes/questions/27.tscn"),
+	preload("res://games/game-3/scenes/questions/28.tscn"),
+	preload("res://games/game-3/scenes/questions/29.tscn"),
+	preload("res://games/game-3/scenes/questions/30.tscn")
 ]
 
 func _ready() -> void:

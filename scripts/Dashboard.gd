@@ -17,6 +17,10 @@ onready var student_id_error = $"addStudentId/TextureRect/VBoxContainer/error"
 onready var student_id_success = $"addStudentId/TextureRect/success"
 
 func _ready():
+	#play global audio
+	if !Audiomanager.playing:
+		Audiomanager.playing = true
+
 	greetText.text = "Hello " + str(currentUser);
 	logout_window.hide()
 	
@@ -56,7 +60,7 @@ func _on_No_pressed() -> void:
 func _on_Yes_pressed() -> void:
 	#logout player
 	SilentWolf.Auth.logout_player()
-	get_tree().quit()
+	get_tree().change_scene("res://scenes/Menu.tscn")
 
 
 func _on_add_id_pressed() -> void:

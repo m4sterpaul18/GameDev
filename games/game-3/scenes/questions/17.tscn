@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/game-3/scenes/questions/1.tscn" type="PackedScene" id=1]
+
+[node name="17" instance=ExtResource( 1 )]
+text = "
+TYPE THE OUTPUT OF THIS CODE
+
+#include <stdio.h>
+
+void main() {
+
+   int diff = 20;
+
+   for(int j = 1; j <=5 ;j++){
+       diff -= j;
+   }
+
+   printf(\"%d\",diff);
+}
+"
+answer = "5"

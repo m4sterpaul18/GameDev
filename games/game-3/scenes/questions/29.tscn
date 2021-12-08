@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/game-3/scenes/questions/1.tscn" type="PackedScene" id=1]
+
+[node name="29" instance=ExtResource( 1 )]
+text = "
+TYPE THE OUTPUT OF THIS CODE
+
+#include <stdio.h>
+
+void main() {
+
+  int arr[9] = {1,2,3,4,5,6,7,8,9};
+  
+  for(int i = 0; i <= 9;i++){
+      if(i % 2 == 1){
+          printf(\"%d\",i);
+      }
+  }
+      
+}
+"
+answer = "13579"

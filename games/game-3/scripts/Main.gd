@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var stopwatch_label = $"Boats/Path_4/follow_4/Player/Camera2D/UI/stop_watch"
+onready var stopwatch_label = $"Boats/Path_4/follow_4/Player/Camera2D/UI/Stopwatch/stop_watch"
 onready var game_over_screen = $"Boats/Path_4/follow_4/Player/Camera2D/UI/game_over"
 
 var elapsed:float = 0

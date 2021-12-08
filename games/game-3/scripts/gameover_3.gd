@@ -5,15 +5,11 @@ onready var success_label = $"VBoxContainer/success"
 onready var submit_button =$'VBoxContainer/submit'
 
 onready var label = $'VBoxContainer/scorelabel'
-onready var time_elapsed = $"../../stop_watch"
-
-export var ldboard_name = "Pirates"
+onready var time_elapsed = $"../../Stopwatch/stop_watch"
 
 func _ready() -> void:
 	success_label.visible = false
 	Global2.connect("place",self,"_place")
-	
-	print(ldboard_name)
 	
 func _process(delta: float) -> void:
 	#score
@@ -34,9 +30,8 @@ func _on_submit_pressed() -> void:
 		'studentId': SilentWolf.Players.player_data['student-id']
 	}
 	
-	
-	SilentWolf.Scores.persist_score(SilentWolf.Auth.logged_in_player,score.text,ldboard_name,metadata)
+	SilentWolf.Scores.persist_score(SilentWolf.Auth.logged_in_player,score.text,"Pirates",metadata)
 	success_label.visible = true
-
+	
 func _place(place:int):
 	label.text = "You placed #" + str(place)

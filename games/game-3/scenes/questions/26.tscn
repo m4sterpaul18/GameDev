@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/game-3/scenes/questions/1.tscn" type="PackedScene" id=1]
+
+[node name="26" instance=ExtResource( 1 )]
+text = "TYPE THE OUTPUT OF THIS CODE
+
+#include <stdio.h>
+
+void main() {
+  int arr[4][4] = {
+      {5,2,3,2},
+      {2,2,5,6},
+      {5,1,6,1},
+      {9,7,9,2}
+  };
+
+    printf(\"%d\",
+    arr[3][3]+
+    arr[2][2]+
+    arr[1][1]+
+    arr[0][0]
+    );
+}
+"
+answer = "15"
