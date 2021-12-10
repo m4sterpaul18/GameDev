@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Gameselect.gd" type="Script" id=1]
 [ext_resource path="res://games/game-1/sprites/Ships/ship_0000.png" type="Texture" id=2]
@@ -13,7 +13,19 @@
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="DynamicFont" id=2]
+size = 20
 outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+outline_size = 3
 outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 6 )
 
@@ -31,21 +43,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -256.5
-margin_top = -187.5
-margin_right = 256.5
-margin_bottom = 187.5
+margin_left = -408.0
+margin_top = -108.0
+margin_right = 408.0
+margin_bottom = 108.0
 theme = SubResource( 1 )
 custom_constants/vseparation = 20
-custom_constants/hseparation = 20
+custom_constants/hseparation = 100
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Plane" type="Button" parent="GridContainer"]
-margin_right = 157.0
-margin_bottom = 177.0
+margin_right = 205.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -54,96 +66,122 @@ custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
 
 [node name="plane" type="Sprite" parent="GridContainer/Plane"]
-position = Vector2( 77.5, 91.5 )
-scale = Vector2( 2.375, 2.375 )
+position = Vector2( 101, 100 )
+scale = Vector2( 2.84375, 2.84375 )
 texture = ExtResource( 2 )
 
+[node name="Label" type="Label" parent="GridContainer/Plane"]
+anchor_left = 0.468
+anchor_top = 1.111
+anchor_right = 0.468
+anchor_bottom = 1.111
+margin_left = -79.94
+margin_top = -7.97601
+margin_right = 80.06
+margin_bottom = 12.024
+custom_fonts/font = SubResource( 2 )
+text = "C-planes"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="C-foods" type="Button" parent="GridContainer"]
-margin_left = 177.0
-margin_right = 334.0
-margin_bottom = 177.0
+margin_left = 305.0
+margin_right = 510.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 
 [node name="fish" type="Sprite" parent="GridContainer/C-foods"]
-position = Vector2( 84.5, 91.5 )
-scale = Vector2( 5, 5 )
+position = Vector2( 100, 108 )
+scale = Vector2( 5.5625, 5.75 )
 texture = ExtResource( 8 )
 hframes = 4
 vframes = 4
 frame = 1
 
+[node name="Label2" type="Label" parent="GridContainer/C-foods"]
+anchor_left = 0.502
+anchor_top = 1.111
+anchor_right = 0.502
+anchor_bottom = 1.111
+margin_left = -79.91
+margin_top = -7.97601
+margin_right = 80.09
+margin_bottom = 12.024
+custom_fonts/font = SubResource( 2 )
+text = "C-foods"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Pirates" type="Button" parent="GridContainer"]
-margin_left = 354.0
-margin_right = 511.0
-margin_bottom = 177.0
+margin_left = 610.0
+margin_right = 815.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = SubResource( 3 )
+
+[node name="Label3" type="Label" parent="GridContainer/Pirates"]
+anchor_left = 0.5
+anchor_top = 1.185
+anchor_right = 0.5
+anchor_bottom = 1.185
+margin_left = -96.5
+margin_top = -31.96
+margin_right = 123.5
+margin_bottom = 34.04
 custom_fonts/font = SubResource( 2 )
+text = "pirates of 
+the c"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ship" type="Sprite" parent="GridContainer/Pirates"]
-position = Vector2( 75.5, 83.5 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 107, 106.6 )
+scale = Vector2( 1.09706, 0.824779 )
 texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 202.461, 115.305, 68.8665, 113.019 )
 
-[node name="Button4" type="Button" parent="GridContainer"]
-margin_top = 197.0
-margin_right = 157.0
-margin_bottom = 374.0
-rect_min_size = Vector2( 150, 150 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/normal = ExtResource( 5 )
-custom_fonts/font = SubResource( 2 )
-text = "Soon!"
-
-[node name="Button5" type="Button" parent="GridContainer"]
-margin_left = 177.0
-margin_top = 197.0
-margin_right = 334.0
-margin_bottom = 374.0
-rect_min_size = Vector2( 150, 150 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/normal = ExtResource( 5 )
-custom_fonts/font = SubResource( 2 )
-text = "Soon!"
-
-[node name="Button6" type="Button" parent="GridContainer"]
-margin_left = 354.0
-margin_top = 197.0
-margin_right = 511.0
-margin_bottom = 374.0
-rect_min_size = Vector2( 150, 150 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_styles/hover = ExtResource( 3 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/normal = ExtResource( 5 )
-custom_fonts/font = SubResource( 2 )
-text = "Soon!"
-
 [node name="Back" parent="." instance=ExtResource( 7 )]
+
+[node name="Choose" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -416.0
+margin_top = -256.0
+margin_right = 416.0
+margin_bottom = -192.0
+custom_fonts/font = SubResource( 4 )
+text = "Choose a game"
+align = 1
+valign = 1
+uppercase = true
 
 [connection signal="pressed" from="GridContainer/Plane" to="." method="_on_Plane_pressed"]
 [connection signal="pressed" from="GridContainer/C-foods" to="." method="_on_Cfoods_pressed"]
 [connection signal="pressed" from="GridContainer/Pirates" to="." method="_on_Pirates_pressed"]
-[connection signal="pressed" from="GridContainer/Button4" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="GridContainer/Button5" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="GridContainer/Button6" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

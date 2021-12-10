@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Context Sensitive - 20XX - 02 Fluoride.wav-422a2261bbfdbad97129d7fd012b6e42.sample"
+
+[deps]
+
+source_file="res://games/game-3/sounds/Context Sensitive - 20XX - 02 Fluoride.wav"
+dest_files=[ "res://.import/Context Sensitive - 20XX - 02 Fluoride.wav-422a2261bbfdbad97129d7fd012b6e42.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

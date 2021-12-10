@@ -70,28 +70,37 @@ margin_left = 80.0
 margin_top = 136.0
 margin_right = -71.0
 margin_bottom = -120.0
+scroll_vertical = 683
+scroll_deadzone = 683
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits/ScrollContainer"]
+margin_top = -683.0
 margin_right = 400.0
-margin_bottom = 694.0
+margin_bottom = 728.0
 rect_min_size = Vector2( 400, 0 )
 custom_constants/separation = 20
 alignment = 1
 
 [node name="Programmer" type="Label" parent="Credits/ScrollContainer/VBoxContainer"]
 margin_right = 400.0
-margin_bottom = 617.0
+margin_bottom = 737.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
-text = "Programmer
+text = "
 
 
-Christian Paul Cirera
 
-Val Jake Amistoso
+
+
+Programmers
+
+
+-Christian Paul Cirera
+
+-Val Jake Amistoso
 
 
 
@@ -101,7 +110,7 @@ Val Jake Amistoso
 Game Design
 
 
-Nixon Lacambra
+-Nixon Lacambra
 
 
 
@@ -110,8 +119,8 @@ Nixon Lacambra
 
 Arts & U.I
 
-Kenny
-pzUZ
+-Kenny
+-pzUZ
 
 
 
@@ -122,12 +131,48 @@ valign = 1
 autowrap = true
 
 [node name="Music" type="Label" parent="Credits/ScrollContainer/VBoxContainer"]
-margin_top = 637.0
+margin_top = 757.0
 margin_right = 400.0
-margin_bottom = 694.0
+margin_bottom = 914.0
 text = "Music
 
-Context Sensitive"
+-Context Sensitive
+
+
+
+
+"
+align = 1
+valign = 1
+
+[node name="Thanks" type="Label" parent="Credits/ScrollContainer/VBoxContainer"]
+margin_top = 934.0
+margin_right = 400.0
+margin_bottom = 1411.0
+text = "Special Thanks To:
+
+
+Adviser
+
+-Ritchell Villafuerte
+
+
+
+Panelists
+
+
+-Raymond Daylo
+
+-Deborah Brosas
+
+-Lyra Nuevas
+
+
+
+Head
+
+Jessie Paragas
+"
 align = 1
 valign = 1
 

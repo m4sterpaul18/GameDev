@@ -85,10 +85,14 @@ __meta__ = {
 }
 
 [node name="FormContainer" type="VBoxContainer" parent="."]
-margin_left = 224.0
-margin_top = 192.0
-margin_right = 1836.0
-margin_bottom = 875.0
+anchor_left = 0.523
+anchor_top = 0.503
+anchor_right = 0.523
+anchor_bottom = 0.503
+margin_left = -322.535
+margin_top = -168.148
+margin_right = 1289.47
+margin_bottom = 876.852
 rect_scale = Vector2( 0.4, 0.4 )
 custom_constants/separation = 100
 __meta__ = {
@@ -139,7 +143,8 @@ margin_right = 1612.0
 margin_bottom = 587.0
 rect_min_size = Vector2( 0, 250 )
 size_flags_horizontal = 1
-text = "Submit"
+size_flags_vertical = 1
+text = "SUBMIT"
 
 [node name="ResendConfCodeButton" parent="FormContainer" instance=ExtResource( 2 )]
 margin_top = 687.0

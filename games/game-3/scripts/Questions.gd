@@ -1,6 +1,11 @@
 extends Control
 
 onready var user_input= $"window/input_window/user_input"
+onready var pass_label = $"window/PASS/pass_label"
+onready var ship_health = $"ship_health"
+
+var number_of_pass = 3
+var number_of_lives = 5
 
 #questions preload
 var questions = [
@@ -33,12 +38,34 @@ var questions = [
 	preload("res://games/game-3/scenes/questions/27.tscn"),
 	preload("res://games/game-3/scenes/questions/28.tscn"),
 	preload("res://games/game-3/scenes/questions/29.tscn"),
-	preload("res://games/game-3/scenes/questions/30.tscn")
+	preload("res://games/game-3/scenes/questions/30.tscn"),
+	preload("res://games/game-3/scenes/questions/31.tscn"),
+	preload("res://games/game-3/scenes/questions/32.tscn"),
+	preload("res://games/game-3/scenes/questions/33.tscn"),
+	preload("res://games/game-3/scenes/questions/34.tscn"),
+	preload("res://games/game-3/scenes/questions/35.tscn"),
+	preload("res://games/game-3/scenes/questions/36.tscn"),
+	preload("res://games/game-3/scenes/questions/37.tscn"),
+	preload("res://games/game-3/scenes/questions/38.tscn"),
+	preload("res://games/game-3/scenes/questions/39.tscn"),
+	preload("res://games/game-3/scenes/questions/40.tscn")
 ]
 
 func _ready() -> void:
 	randomize()
 	instance_question()
+
+	ship_health.value = number_of_lives
+
+func _process(delta: float) -> void:
+	
+	ship_health.value = lerp(ship_health.value, number_of_lives , 1)
+	
+	pass_label.text = str(number_of_pass) + "/3"
+	
+	
+	if number_of_lives == 0:
+		Global2.emit_signal("game_over_boat","lost")
 	
 func _on_user_input_text_entered(new_text: String) -> void:
 	var code_question = get_node("window/code").get_children()
@@ -51,9 +78,12 @@ func _on_user_input_text_entered(new_text: String) -> void:
 	#wrong
 	else:
 		Global2.emit_signal("wrong_answer")
+		Global2.emit_signal("camera_boat_shake")
 		user_input.text = ''
 		print('correct answer:' + str(code_question[0].answer))
-
+		instance_question()
+		change_lives_bar()
+			
 
 func instance_question():
 	#if there is a child, remove first
@@ -66,6 +96,13 @@ func instance_question():
 	get_node("window/code").add_child(new_question)
 	
 		
-		
-	
+func _on_PASS_pressed() -> void:
+	if number_of_pass > 0:
+		instance_question()
+		number_of_pass -= 1
+	else:
+		print("cant pass anymore")
 
+func change_lives_bar():
+	number_of_lives -= 1
+	

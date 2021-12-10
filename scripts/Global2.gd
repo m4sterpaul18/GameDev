@@ -12,3 +12,5 @@ signal game_over_boat
 signal correct_answer
 signal wrong_answer
 signal place
+signal camera_boat_shake
+signal change_gameover_label

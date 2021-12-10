@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/game-3/scenes/questions/1.tscn" type="PackedScene" id=1]
+
+[node name="39" instance=ExtResource( 1 )]
+text = "
+TYPE THE OUTPUT OF THIS CODE
+
+void main() {
+    
+    int age = (6 * 7) / 6;
+    
+    if(age < 17){
+        printf(\"baby\");
+    }
+    else if(age > 18){
+        printf(\"old\");
+    }
+    else{
+        printf(\"no age\");
+    }
+}
+"
+answer = "baby"

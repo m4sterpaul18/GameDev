@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://games/game-3/scenes/questions/1.tscn" type="PackedScene" id=1]
+
+[node name="34" instance=ExtResource( 1 )]
+text = "
+TYPE THE OUTPUT OF THIS CODE
+
+void main() {
+
+    int a = (5 * 2) + (4 / 2);
+	
+    int b = (3 - 2) * (5 + 3);
+    
+    printf(\"%d\", a + b);
+    
+}
+"
+answer = "20"

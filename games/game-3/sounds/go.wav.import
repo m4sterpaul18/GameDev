@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/go.wav-de6365538d3a8cd9b5ba390b90ab541b.sample"
+
+[deps]
+
+source_file="res://games/game-3/sounds/go.wav"
+dest_files=[ "res://.import/go.wav-de6365538d3a8cd9b5ba390b90ab541b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

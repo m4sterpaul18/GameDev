@@ -1,0 +1,182 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ui/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/Back.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://games/game-3/sprites/ship_spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://games/game-3/sprites/reward.png" type="Texture" id=5]
+[ext_resource path="res://games/game-3/scripts/Instructions.gd" type="Script" id=6]
+[ext_resource path="res://ui/bars/bars_02.png" type="Texture" id=7]
+[ext_resource path="res://ui/bars/bars_03.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 3
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 19
+outline_size = 2
+outline_color = Color( 0.521569, 0, 1, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Instruction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Back" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.047
+anchor_top = 0.083
+anchor_right = 0.047
+anchor_bottom = 0.083
+margin_left = -40.202
+margin_top = -39.744
+margin_right = 39.798
+margin_bottom = 40.256
+
+[node name="play" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.933
+anchor_top = 0.943
+anchor_right = 0.933
+anchor_bottom = 0.943
+margin_left = -106.478
+margin_top = -60.224
+margin_right = 77.522
+margin_bottom = 27.776
+text = "PLAY"
+
+[node name="Header" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -144.0
+margin_top = 64.0
+margin_right = 144.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 1 )
+text = "Instructions"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Header"]
+anchor_left = 0.5
+anchor_top = 7.818
+anchor_right = 0.5
+anchor_bottom = 7.818
+margin_left = -403.0
+margin_top = -139.632
+margin_right = 413.0
+margin_bottom = 231.368
+custom_fonts/font = SubResource( 2 )
+text = "A group of pirates are racing towards the \"FORBIDDEN TREASURE OF THE C\"
+
+
+You are the captain of the ship. You need to ANSWER programming questions to advance on the race. 
+
+You can PASS a question 3 times only.
+
+ If you get the WRONG answer, your ship's health decline.
+
+
+Go get the bounty before the other pirates do! yarr
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reward" type="Sprite" parent="."]
+position = Vector2( 922.5, 563.547 )
+scale = Vector2( 0.265625, 0.265625 )
+texture = ExtResource( 5 )
+
+[node name="ship_spritesheet" type="Sprite" parent="."]
+position = Vector2( 658.5, 563.547 )
+scale = Vector2( 1.63826, 1.33712 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 204, 115, 66, 113 )
+
+[node name="Ship label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 7.818
+anchor_right = 0.5
+anchor_bottom = 7.818
+margin_left = -139.0
+margin_top = -5332.22
+margin_right = 93.0
+margin_bottom = -5244.22
+custom_fonts/font = SubResource( 2 )
+text = "Your Ship"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ship label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 7.818
+anchor_right = 0.5
+anchor_bottom = 7.818
+margin_left = -371.0
+margin_top = -5332.22
+margin_right = -139.0
+margin_bottom = -5244.22
+custom_fonts/font = SubResource( 2 )
+text = "Ship's health"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ship label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 7.818
+anchor_right = 0.5
+anchor_bottom = 7.818
+margin_left = 117.0
+margin_top = -5332.22
+margin_right = 349.0
+margin_bottom = -5244.22
+custom_fonts/font = SubResource( 2 )
+text = "Bounty"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = 434.5
+margin_top = 491.547
+margin_right = 769.5
+margin_bottom = 544.547
+rect_rotation = 90.0
+rect_scale = Vector2( 0.4, 0.5 )
+value = 50.0
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+fill_mode = 1
+tint_progress = Color( 0.592157, 1, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

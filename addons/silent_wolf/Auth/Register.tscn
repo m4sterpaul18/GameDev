@@ -82,14 +82,14 @@ outline_color = Color( 0.854902, 0.0901961, 0.0901961, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=14]
-size = 64
-outline_size = 2
+size = 70
+outline_size = 4
 outline_color = Color( 0.521569, 0, 1, 1 )
 font_data = ExtResource( 7 )
 
 [node name="Register" type="TextureRect"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -106,21 +106,30 @@ custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
 text = ""
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 720, 352 )
-scale = Vector2( 0.903258, 0.827863 )
-z_index = -1
+[node name="Background" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -395.0
+margin_top = -304.0
+margin_right = 650.0
+margin_bottom = 412.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FormContainer" type="VBoxContainer" parent="Background"]
-anchor_left = 18.8
-anchor_top = 12.8
-anchor_right = 18.8
-anchor_bottom = 12.8
-margin_left = -19920.6
-margin_top = -9358.07
-margin_right = -18039.6
-margin_bottom = -8254.07
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -271.5
+margin_top = -288.0
+margin_right = 1609.5
+margin_bottom = 1112.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_scale = Vector2( 0.3, 0.4 )
@@ -280,7 +289,7 @@ text = "Submit"
 visible = false
 margin_top = 913.0
 margin_right = 1881.0
-margin_bottom = 977.0
+margin_bottom = 983.0
 custom_fonts/font = SubResource( 14 )
 text = "Processing..."
 align = 1

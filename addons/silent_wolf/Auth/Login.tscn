@@ -196,6 +196,7 @@ custom_colors/font_color = Color( 0.321569, 0.360784, 0.92549, 1 )
 text = "Forgot Password?"
 
 [node name="RememberMeCheckBox" type="CheckBox" parent="Background/FormContainer"]
+visible = false
 margin_top = 568.0
 margin_right = 1245.0
 margin_bottom = 618.0
@@ -211,17 +212,17 @@ expand_icon = true
 
 [node name="ErrorMessage" type="Label" parent="Background/FormContainer"]
 visible = false
-margin_top = 698.0
+margin_top = 568.0
 margin_right = 1245.0
-margin_bottom = 735.0
+margin_bottom = 605.0
 custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
 autowrap = true
 
 [node name="LoginButton" parent="Background/FormContainer" instance=ExtResource( 2 )]
-margin_top = 698.0
+margin_top = 568.0
 margin_right = 1245.0
-margin_bottom = 948.0
+margin_bottom = 818.0
 rect_min_size = Vector2( 0, 250 )
 size_flags_horizontal = 1
 custom_styles/hover = SubResource( 16 )
@@ -231,9 +232,9 @@ text = "Submit"
 
 [node name="ProcessingLabel" type="Label" parent="Background/FormContainer"]
 visible = false
-margin_top = 981.0
+margin_top = 898.0
 margin_right = 1245.0
-margin_bottom = 1068.0
+margin_bottom = 938.0
 custom_fonts/font = SubResource( 19 )
 text = "Processing..."
 align = 1

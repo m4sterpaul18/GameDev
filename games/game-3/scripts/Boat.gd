@@ -16,7 +16,7 @@ onready var ai_boost_timer = $"ai_timer_boost"
 onready var boost = $"ai_timer_boost/boost"
 
 var ai_speed_boost = 2.0
-var player_speed_boost = 2.5
+var player_speed_boost = 4.5
 var speed
 
 func _ready() -> void:
@@ -27,7 +27,7 @@ func _ready() -> void:
 	randomize()
 	
 	#randomness
-	boost.wait_time = rand_range(10.5, 20.5)
+	boost.wait_time = rand_range(15.5, 25.5)
 	speed = rand_range(min_speed,max_speed)
 	print(str(player_type)+" my speed:" + str(speed))	
 	
@@ -44,6 +44,10 @@ func _process(delta: float) -> void:
 			path.offset += speed * ai_speed_boost * delta
 		else:
 			path.offset += speed * delta
+			
+	#cheats to boost
+	if Input.is_action_just_pressed("mid_mouse"):
+		 _boost_speed()
 		
 #player boost	
 func _boost_speed():
